@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane fx:id="LearningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="LearningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flashlearning.FlashLearningController">
    <children>
-      <ImageView fx:id="MainImageView" fitHeight="607.0" fitWidth="800.0" layoutX="150.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="ShowAnswerButton" layoutX="531.0" layoutY="754.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="58.0" text="Vis Svar" />
-      <Button fx:id="MediumButton" layoutX="473.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="58.0" text="Mellem" />
-      <Button fx:id="HardButton" layoutX="589.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="58.0" text="Svær" />
-      <Button fx:id="WrongButton" layoutX="705.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="58.0" text="Forkert" />
-      <Button fx:id="EasyButton" layoutX="357.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="58.0" text="Let" />
-      <Button fx:id="IrrelevantButton" layoutX="884.0" layoutY="822.0" mnemonicParsing="false" text="Irrelevant" />
-      <TextArea fx:id="ImageTextArea" layoutX="150.0" layoutY="672.0" prefHeight="75.0" prefWidth="800.0" />
+      <ImageView fx:id="MainImageView" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></ImageView>
+      <Button fx:id="ShowAnswerButton" layoutX="531.0" layoutY="754.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showAnswerButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Vis Svar" />
+      <Button fx:id="MediumButton" layoutX="473.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mediumButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Mellem" />
+      <Button fx:id="HardButton" layoutX="589.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#hardButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Svær" />
+      <Button fx:id="WrongButton" layoutX="705.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#wrongButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Forkert" />
+      <Button fx:id="EasyButton" layoutX="357.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#easyButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Let" />
+      <Button fx:id="IrrelevantButton" layoutX="884.0" layoutY="822.0" mnemonicParsing="false" onAction="#irrelevantButtonPressed" text="Irrelevant" />
+      <TextArea fx:id="ImageTextArea" editable="false" layoutX="150.0" layoutY="672.0" prefHeight="75.0" prefWidth="800.0" />
+      <MenuBar fx:id="MenuBar" layoutX="14.0" layoutY="14.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="menuFileImportOption" mnemonicParsing="false" onAction="#importOptionSelected" text="Import" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>
