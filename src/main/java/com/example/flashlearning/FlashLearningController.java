@@ -10,6 +10,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.stage.FileChooser;
+
+import java.io.File;
 
 public class FlashLearningController {
 
@@ -52,7 +55,6 @@ public class FlashLearningController {
             }
             MainImageView.setY(45);
         }
-
     }
 
 
@@ -85,7 +87,35 @@ public class FlashLearningController {
     }
 
 
-    public void importOptionSelected(ActionEvent actionEvent) {
-        //TODO make a filechooser, to select a package of images and text for it. remember to make it Ib safe.
+    public void importOptionSelected() {
+        // Create a FileChooser
+        FileChooser fileChooser = new FileChooser();
+
+        // Set the title for the FileChooser dialog
+        fileChooser.setTitle("Open Text File From Deck Collection");
+
+        // Set extension filter for text files
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File initialDir = new File("src/main/resources");
+        if (initialDir.exists()) {
+            fileChooser.setInitialDirectory(initialDir);
+        }
+
+        // Show open file dialog
+        File file = fileChooser.showOpenDialog(null);
+
+        // Check if a file was selected and is a txt file. Ib >:-C
+        if (file != null) {
+            if (!file.getName().toLowerCase().endsWith(".txt")) {
+                System.out.println("Error: Please select a .txt file.");
+            } else {
+                System.out.println("File selected: " + file.getAbsolutePath());
+                // logic.deckImported(file);
+            }
+        } else {
+            // No file was selected, handle this case as needed
+            System.out.println("File selection cancelled.");
+        }
     }
 }
