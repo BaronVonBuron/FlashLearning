@@ -88,11 +88,18 @@ public class FlashLearningController {
 
 
     public void importOptionSelected() {
+        try {
+            logic.deckImported(srcFileChooser(), noteFileChooser());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public File srcFileChooser(){
         // Create a FileChooser
         FileChooser fileChooser = new FileChooser();
 
         // Set the title for the FileChooser dialog
-        fileChooser.setTitle("Open Text File From Deck Collection");
+        fileChooser.setTitle("Select src file from collection");
 
         // Set extension filter for text files
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
@@ -103,19 +110,53 @@ public class FlashLearningController {
         }
 
         // Show open file dialog
-        File file = fileChooser.showOpenDialog(null);
+        File srcFile = fileChooser.showOpenDialog(null);
 
         // Check if a file was selected and is a txt file. Ib >:-C
-        if (file != null) {
-            if (!file.getName().toLowerCase().endsWith(".txt")) {
+        if (srcFile != null) {
+            if (!srcFile.getName().toLowerCase().endsWith(".txt")) {
                 System.out.println("Error: Please select a .txt file.");
             } else {
-                System.out.println("File selected: " + file.getAbsolutePath());
-                // logic.deckImported(file);
+                System.out.println("File selected: " + srcFile.getAbsolutePath());
+                return srcFile;
             }
         } else {
             // No file was selected, handle this case as needed
             System.out.println("File selection cancelled.");
         }
+        return srcFile;
+    }
+
+    public File noteFileChooser(){
+        // Create a FileChooser
+        FileChooser fileChooser = new FileChooser();
+
+        // Set the title for the FileChooser dialog
+        fileChooser.setTitle("Select note file from collection");
+
+        // Set extension filter for text files
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File initialDir = new File("src/main/resources");
+        if (initialDir.exists()) {
+            fileChooser.setInitialDirectory(initialDir);
+        }
+
+        // Show open file dialog
+        File noteFile = fileChooser.showOpenDialog(null);
+
+        // Check if a file was selected and is a txt file. Ib >:-C
+        if (noteFile != null) {
+            if (!noteFile.getName().toLowerCase().endsWith(".txt")) {
+                System.out.println("Error: Please select a .txt file.");
+            } else {
+                System.out.println("File selected: " + noteFile.getAbsolutePath());
+                return noteFile;
+            }
+        } else {
+            // No file was selected, handle this case as needed
+            System.out.println("File selection cancelled.");
+        }
+        return noteFile;
     }
 }

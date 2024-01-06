@@ -2,16 +2,20 @@ package com.example.flashlearning;
 
 import javafx.scene.image.Image;
 
+import java.util.UUID;
+
 public class Flashcard {
 
     private Image image;
     private String category, answer;
     private int difficulty;
+    private UUID uuid;
 
-    public Flashcard(Image image, String category, String answer) {
+    public Flashcard(Image image, String category, String answer) {//image, arraylist<string>, ikke answer
         this.image = image;
         this.category = category;
         this.answer = answer;
+        uuid = UUID.randomUUID();
     }
 
     public int getDifficulty() {

@@ -1,0 +1,653 @@
+#separator:tab
+#html:false
+	Max Ernst	Europe After the Rain II		1942	Symbolism			
+	Peter Paul Rubens	Fall of the Damned		c. 1620	Baroque		Flemish (Southern Netherlands)	
+	Bruegel the Elder	Triumph of Death		1562	Early Renaissance, Northern Renaissance			
+	Peter Paul Rubens	The Adoration of the Magi (3 of 3)		1624	Baroque		Flemish (Southern Netherlands)	
+	Raphael	The Transfiguration		1516–20	High Renaissance	oil on wood		
+	Henri Rousseau	Sleeping Gypsy		1897	Post-Impressionism			
+	Vincent van Gogh	The Potato Eaters		1885	Post-Impressionism			
+	Albrecht Altdorfer	The Battle of Alexander at Issus		1529	Renaissance			
+	Paul Klee	Ad Marginen		1930	Expressionism			
+	Rembrandt	Belshazzar's Feast		1635	Baroque			
+	Marc Chagall	I and the Village		1911	Expressionism			
+	Henri Rousseau	Carnival Evening		1886	Post-Impressionism, Naïve Art, Primitivism			
+	René Magritte	The False Mirror		1928	Surrealism			
+	Mark Tansey	Forward Retreat		1986	Contemporary Art			
+	Jean-François Millet	Harvesters Resting		1853	Realism			
+	Bruegel the Elder	Procession to Calvary		1564	Early Renaissance, Northern Renaissance			
+	Peter Paul Rubens	Feast of Venus		1637	Baroque		Flemish (Southern Netherlands)	
+	Paolo Uccello	Saint George and the Dragon		c. 1470	Early Renaissance			
+	Egon Schiele	Death and the Maiden		1915	Expressionism			
+	Egon Schiele	Family		1917	Expressionism			
+	Hans Holbein the Younger	The Ambassadors	Double Portrait of Jean de Dinteville and Georges de Selve	1533	Northern Renaissance			
+	Hokusai	Ocean Waves		1826-1833	Ukiyo-e			
+	Francisco Goya	The Third of May 1808		1814	Romanticism			Diverging from the traditions of Christian art and traditional depictions of war, it has no distinct precedent. The painting's content, presentation, and emotional force secure its status as a groundbreaking, archetypal image of the horrors of war.
+	Rembrandt	Anatomy Lesson of Dr. Nicolaes Tulp		1632	Baroque			
+	Eugène Delacroix	Liberty Leading the People		1830	Romanticism			
+	Hieronymus Bosch	The Last Judgement (triptych)		c. 1482	Early Renaissance, Northern Renaissance			
+	Hieronymus Bosch	The Garden of Earthly Delights (triptych)		1490-1510	Early Renaissance, Northern Renaissance			
+	Sandro Botticelli	The Birth of Venus		1486	Early Renaissance			
+	Bruegel the Elder	The Tower of Babel		c. 1563	Early Renaissance, Northern Renaissance			
+	Bruegel the Elder (attributed)	Landscape with the Fall of Icarus		c. 1558	Early Renaissance, Northern Renaissance			This is probably an unknown artist's copy of an original painting by Bruegel.
+	Antonio da Correggio	Deposition from the Cross		1525	High Renaissance, Mannerism	oil on canvas		
+	Paul Gauguin	The Yellow Christ		1889	Post-Impressionism			
+	Johannes Vermeer	The Girl with a Pearl Earring		c. 1665	Baroque, Dutch Golden Age			
+	Rembrandt	Night Watch		1642	Baroque			
+	Pierre-Auguste Renoir	Dance at Le Moulin de la Galette		1876	Impressionism			
+	Georges Seurat	A Sunday Afternoon on the Island of La Grande Jatte		1884–1886	Post-Impressionism, Pointillism			
+	René Magritte	The Treachery of Images		1929	Surrealism			The text in the painting says “this is not a pipe”. Magritte was trying to make the point that the painting was not an actual pipe, only a representation of one.
+	Grant Wood	American Gothic		1930	Social Realism			American Gothic was inspired by the Dibble House in Iowa. Wood saw its Gothic architectural style and decided to paint the house along with the kind of people he imagined might live in it. The painting depicts a farmer and his daughter, both modeled by his dentist and his sister. Each element of the painting was done separately; the models sat separately and were never at the house.
+	Salvador Dali	The Persistence of Memory		1931	Surrealism			Dali mentions that he was motivated by a surrealist concept of Camembert cheese melting under the sun.
+	Pablo Picasso	Guernica		1937	Cubism			Picasso’s detest of the Spanish Civil War is manifested in an art piece known as Guernica. The piece was commissioned by the Spanish Republican government to portray the pain and suffering caused by wars. Guernica would become a monumental symbol of anti-war and peace.
+	René Magritte	The Son of Man		1964	Surrealism			
+	Hokusai	The Great Wave off Kanagawa		c. 1829–32	Ukiyo-e			
+	Diego Velázquez	Las Meninas (The Maids of Honour)		1656	Baroque, Spanish Golden Age			Las Meninas (The Maids of Honour) is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age, in the Museo del Prado in Madrid. The work's complex and enigmatic composition raises questions about reality and illusion, and creates an uncertain relationship between the viewer and the figures depicted. Because of these complexities, Las Meninas has been one of the most widely analyzed works in Western painting.
+	Michelangelo	The Creation of Adam	(detail from the Sistine Chapel)	c. 1511	High Renaissance			
+	Raphael	The School of Athens		1510-11	High Renaissance			One of the most famous frescoes by the Italian Renaissance artist Raphael. It was painted between 1510 and 1511 as a part of Raphael's commission to decorate with frescoes the rooms now known as the Stanze di Raffaello, in the Apostolic Palace in the Vatican.
+	Édouard Manet	Olympia		1865	Realism, Impressionism	oil on canvas		"Olympia caused shock and astonishment when it was first exhibited at the 1865 Paris Salon. What shocked contemporary audiences was not the nudity, nor even the presence of her fully clothed maid, but her confrontational gaze and a number of details identifying her as a demi-mondaine or prostitute. These include the orchid in her hair, her bracelet, pearl earrings and the oriental shawl on which she lies, symbols of wealth and sensuality. The black ribbon around her neck, in stark contrast with her pale flesh, and her cast-off slipper underline the voluptuous atmosphere. ""Olympia"" was a name associated with prostitutes in 1860s Paris."
+	James McNeill Whistler	"Arrangement in Grey and Black No.1, or ""Whistler's Mother"""		1871	Tonalism	oil-on-canvas	American	Arrangement in Grey and Black No.1, famous under its colloquial name Whistler's Mother, is an 1871 oil-on-canvas painting by American-born painter James McNeill Whistler.
+	Paul Cézanne	Basket of Apples		1890–1894	Post-Impressionism		French	Basket of Apples is a still life oil painting by French artist Paul Cézanne. The piece is often noted for its disjointed perspective. It has been described as a balanced composition due to its unbalanced parts; the tilted bottle, the incline of the basket, and the foreshortened lines of the cookies meshing with the lines of the tablecloth.
+	Edvard Munch	The Death of Marat		1907	Expressionism, Symbolism			Jean-Paul Marat was one of the leading political lights of the French revolution. Suffering from a skin disease, Marat was known to spend most of the day in a bathtub where he would work on his writings. It was there that Marat was assassinated by Charlotte Corday. The death of Marat has been painted several times, but Munch’s is a particularly brutal vision.
+	Matthias Grünewald	The Temptation of St. Anthony		c. 1515	Renaissance			
+	Francisco Goya	Saturn Devouring His Son		1819-1823	Romantic		Spain	"Probably the most famous of the ""Black Paintings."""
+	Sandro Botticelli	The Allegory of Spring		c. 1482	Reanaissance			
+	John Everett Millais	Ophelia		1852	Pre-Raphaelite, Realism			
+	Peter Paul Rubens	St. George and The Dragon		1605-07	Baroque		Flemish (Southern Netherlands)	
+	Wassily Kandinsky	Composition VII		1913	Expressionism			According to Kandinsky, this is the most complex piece he ever painted.
+	Natalia Goncharova	Cyclist		1913	Expressionism			
+	Claude Monet	Water Lilies		1922	Impressionism	oil painting	French	This is one of the approximately 250 oil paintings in Monet's series, Water Lilies (or Nymphéas). Many of the works were painted while Monet suffered from cataracts.
+	Henry Tanner	The Banjo Lesson		1893	Realism			
+	Jean Michel Basquiat	Untitled (Skull)		1984	Neo-Expressionism, Primitivism			
+	Ernie Barnes	Sugar Shack		early 1970s	Neo-Mannerism			
+	Pablo Picasso	Three Musicians		1921	Cubism			
+	Diego Rivera	Cargador de Flores		1935	Post-Impressionism, Mexican Mural Movement			
+	Pierre Auguste Renoir	Luncheon of the Boating Party		1880–1881	Impressionism			
+	Henry Fuseli	The Nightmare		1781	Romanticism			
+	Ivan Albright	Picture of Dorian Gray		1943	Magical Realism			
+	Fancis Bacon	Figures at the Base of a Crucifixion		1944	Surrealism, Abstract Expressionism			
+	Zhang Zeduan	Along the River During Qingming Festival		early 12th cent.	Song Dynasty		Chinese	These are details the from an 18th cent. remake of Zhang Zeduan's masterpiece. The original scroll is 17 feet long and 10 inches high, there are 814 humans, 28 boats, 60 animals, 30 buildings, 20 vehicles, nine sedan chairs, and 170 trees.
+	Zhang Xuan	Noble Ladies in Tang Dynasty		Zhang Xuan lived 713-755 A.D.	Tang Dynasty			Noble Ladies in Tang Dynasty are a serial of paintings drawn by Zhang Xuan and Zhou Fang, two of the most influential figure painters during the Tang dynasty (618 – 907), when the paintings of noble ladies became very popular.
+	Giotto	The Mourning of Christ		1305	Renaissance, Gothic Art			
+	Caravaggio	The Sacrifice of Isaac		c. 1603	Baroque			
+	Jan Van Eyck	Portrait of a Man in a Turban		1433	Early Renaissance, Northern Renaissance			most likely a self-portrait
+	Willem de Kooning	Woman V		1953	Abstract Expressionism			
+	Masaccio	The Tribute Money		c. 1425	Renaissance			
+	Mark Rothko	No. 61 (Rust and Blue)		1953	Color Field, Modern Art			
+	Albrecht Dürer	Self-portrait at age 13		1484	High Renaissance			silverpoint drawing by the thirteen-year-old Dürer
+	Albrecht Dürer	Praying Hands		1508	High Renaissance			
+	Piet Mondrian	Composition II in Red, Blue, and Yellow		1930	Modern Art			
+	Piero della Francesca	The Resurrection		1463	Renaissance			
+	Gustave Courbet	Self-portrait (The Desperate Man)		c. 1845	Realism			
+	Gustave Courbet	The Artist's Studio:  A Real Allegory of a Seven Year Phase in my Artistic (and Moral) Life		1855	Realism			
+	Titian	The Rape of Europa		1562	Renaissance			
+	Titian	Emperor Charles V		1548	Renaissance			Titian's state portrait of Emperor Charles V (1548) at Mühlberg established a new genre, that of the grand equestrian portrait. The composition is steeped both in the Roman tradition of equestrian sculpture and in the medieval representations of an ideal Christian knight, but the weary figure and face have a subtlety few such representations attempt.
+	Titian	Danaë		1553-56	Renaissance			"Titian's unmatched handling of color is exemplified by his Danaë, one of several mythological paintings, or ""poesie"" (""poems"") as the painter called them. This painting was done for Alessandro Farnese but a later variant was produced for Philip II, for whom Titian painted many of his most important mythological paintings."
+	Paul Klee	Red Balloon		1922	Abstract Art, Expressionism, Surrealism			
+	Paul Klee	Senecio		1922	Abstract Art, Expressionism, Surrealism			
+	Marc Chagall	The Fiddler		1912	Expressionism			
+	Nicolas Poussin	Helios and Phaeton with Saturn and the Four Seasons		c. 1635	Baroque, Classicism			
+	Nicolas Poussin	The Continence of Scipio		1640	Classicism, Baroque			
+	Paolo Uccello	Portrait of a Lady		c.1450	Early Renaissance			
+	William Blake	The Lovers' Whirlwind		1824-27	Romanticism			The Lovers' Whirlwind illustrates Hell in Canto V of Dante's Inferno
+	Andrea Mantegna	Saint Sebastian		1480	Early Renaissance			
+	Andrea Mantegna	The Agony in the Garden		c. 1458	Early Renaissance			The Agony in the Garden (right panel of the predella of the San Zeno Altarpiec) is the pinnacle of Mantegna's early style.
+	El Greco	The Disrobing of Christ		1577–1579	Mannerism, Renaissance			The Disrobing of Christ (El Espolio) (1577–1579) is one of the most famous altarpieces of El Greco. El Greco's altarpieces are renowned for their dynamic compositions and startling innovations.
+	Paul Nash	Sea of the Dead		1941	Surrealism			
+	Winslow Homer	The Gulf Stream		1899	Realism			
+	Marcel Duchamp	Nude Descending a Staircase No. 2		1912	Cubism			
+	Giorgione	Sleeping Venus		c. 1510	High Renaissance			
+	Hans Holbein the Younger	Portrait of Henry VIII of England		c. 1536	Northern Renaissance			
+	Wassily Kandinsky	Composition VIII		1923	Expressionism			
+	Tintoretto	Paradise		after 1588	Renaissance			
+	Tintoretto	The Deliverance of Arsenoe		c. 1560	Renaissance			
+	Edgar Degas	A Cotton Office in New Orleans		1873	Impressionism, Realism			
+	Edgar Degas	The Dance Class		1873–1876	Impressionism, Realism	oil on canvas		
+	Edgar Degas	The Absinthe Drinker	"or ""Glass of Absinthe"""	1876	Impressionism, Realism	oil on canvas		
+	Fra Angelico	The Day of Judgement		1425–1430	Early Renaissance			The Day of Judgement, upper panel of an altarpiece. It shows the precision, detail and colour required in a commissioned work
+	Georges Seurat	The Seine and la Grande Jatte - Springtime		1888	Post-Impressionism, Pointillism			
+	Max Ernst	L'Ange du Foyer		1937	Surrealism			
+	Max Ernst	Ubu Imperator		1923	Surrealism			
+	Jasper Johns	Three Flags		1958	Abstract Expressionism, Pop Art			
+	Jasper Johns	Map		1961	Abstract Expressionism			
+	Sandro Botticelli	Venus and Mars		c 1483	Renaissance			
+	David Hockney	We Two Boys Together Clinging		1961	Pop Art			
+	Umberto Boccioni	The City Rises		1910	Futurism			
+	Umberto Boccioni	The Laugh		1911	Futurism			
+	Umberto Boccioni	States of Mind - The Farewells		1911	Futurism			
+	Joachim Patinir	Landscape with Saint Christopher		c.1520	Northern Renaissance			
+	Joachim Patinir	The Baptism of Christ		1510-20	Northern Renaissance			
+	Duccio	The Maestà	"or ""Maestà of Duccio"""	1308–1311	Gothic Art			
+	Duccio	Madonna with Child and six Angels		c. 1300-1305.	Gothic Art			
+	Rogier van der Weyden	The Descent from the Cross		c. 1435	Northern Renaissance	oil on oak panel		
+	John Constable	The Opening of Waterloo Bridge seen from Whitehall Stairs		c. 1832	Romanticism			
+	Jacques-Louis David	Napoleon at the Saint-Bernard Pass		1801	Neoclassicism			
+	Jacques-Louis David	The Death of Socrates		1787	Neoclassicism			
+	Jacques-Louis David	Leonidas at Thermopylae		1814	Neoclassicism			
+	Arshile Gorky	The Liver is the Cock's Comb		1944	Cubism			Arshile Gorky  (1905-1948), The Liver is the Cock's Comb (1944), oil on canvas. The painting represents the peak of Gorky's achievement and his individual style, after he had emerged from the influence of Cézanne and Picasso.
+	Hieronymus Bosch	The Temptation of St. Anthony		c. 1501	Early Renaissance, Northern Renaissance			
+	Simone Martini	Petrarch's Virgil		c. 1336	International Gothic			
+	Frederick Edwin Church	Aurora Borealis		1865	Romanticism			
+	Edward Hopper	Nighthawks		1942	Realism			
+	Lucio Fontana	Concept Spatiale		1959	Spatialism			
+	Franz Marc	Die großen blauen Pferde (The Large Blue Horses)		1911	Expressionism			
+	Pierre-Auguste Renoir	The Theater Box		1874	Impressionism			
+	Pierre-Auguste Renoir	The Two Sisters		1881	Impressionism			
+	Pierre-Auguste Renoir	Nude In The Sun		1875	Impressionism			
+	Giotto	The Lamentation		1305-06	Early Renaissance	fresco		
+	Simone Martini	Annunciation with St. Margaret and St. Ansanus		1333	International Gothic	tempera and gold on panel		
+	Praxiteles	Aphrodite of Knidos		4th cent. BC	Ancient Greek			Praxiteles, Aphrodite of Knidos, Mid 4th Century 340 BCE. First nude statue of a greek goddess Praxiteles was famous for his ability to transform marble into soft flesh.
+	Auguste Rodin	The Gates of Hell		1880-1917	Modern Sculpture			
+	(attributed to) Praxiteles	Hermes and the Infant Dionysos		4th cent. BC	Ancient Greek			
+	Lysippos	Farnese Hercules (Weary Hercules)		320 BC	Ancient Greek			
+	Alexandros of Antioch	Venus de Milo		125 BCE	Ancient Greece			
+	(attributed to) Agesander, Athenodoros, and Polydorus	Laocoön and His Sons		200 BCE - 80 AD	Ancient Rome			
+	Auguste Rodin	The Thinker		1881	Modern Sculpture			
+	Camille Claudel	The Fates		1897	Modern Sculpture			
+	Camille Claudel	The Age of Maturity		1899-1913	Modern Sculpture			
+	Gaston Lachaise	Standing Woman		1932	Modern Sculpture			
+	Gaston Lachaise	Heroic Man		1934	Modern Sculpture			
+	George Minne	Adolescent		1891	Modern Sculpture			
+	George Minne	Five Kneeling Youths		1898	Modern Sculpture			
+	Wilhelm Lehmbruck	Dying Warrior (Fallen Man)		1916	Modern Sculpture	Sculpture		
+	Giacometti	Large Woman		1960	Modern Sculpture	Sculpture		
+	Giacometti	Man Striding		1948	Modern Sculpture			
+	Calder	Arc of Petals (Mobile)		1940	Modern Sculpture			
+	Brancusi	Endless Column		1930	Modern Sculpture			
+	Moore	Recumbent Figure		1940	Modern Sculpture			
+	Moore	Family Group		1950	Modern Sculpture			
+	Théodore Chassériau	The Toilet of Esther		1842	Romanticism			
+	Paul Delaroche	The Execution of Lady Jane Grey		1834	Neoclassicism, Academicism			
+	Thorvaldsen	The Lion of Lucerne	(Monument to the Royal Swiss Guards of Louis XVI)	1819-1821	Neoclassicism			
+	Jean-François Millet	The Winnower		1848	Realism			
+	Carpeaux	The Four Continents		1867-1872	Realism			
+	Édouard Manet	The Railroad		1873	Realism			
+	George Seurat	A Bathing Place (Asnieres)		1884	Post-Impressionism, Pointillism			
+	Vincent van Gogh	The Night Cafe at Arles		1888	Post-Impressionism			
+	Thomas Eakins	Hiawatha		c. 1874	Realism			
+	Jean-François Millet	The Angelus		1857	Realism	oil on canvas		
+	Charles Bird King	Young Omaha, War Eagle, Little Missouri, and Pawnees		1821	American Renaissance	oil on canvas		
+	Pierre-Narcisse Guérin	The Return of Marcus Sextus		c. 1799	Neoclassicism	oil on canvas		
+	Antoine-Jean Gros	Napoleon in the Pesthouse at Jaffa		1804	Neoclassicism	oil on canvas		
+	Anne-Louis Girodet	The Deluge		1806	Romanticism	oil on canvas		
+	Francisco Goya	The Clothed Maja		c. 1803	Romanticism	oil on canvas		"The more chaste, but teasingly provocative, companion to Goya's ""Nude Maja."""
+	William Blake	Elohim Creating Adam		c. 1795-1805	Romanticism	color print finished in ink and watercolor		
+	William Blake	Body of Abel Found by Adam and Eve		c. 1826	Romanticism	watercolor		
+	Théodore Géricault	Officer of the Imperial Guard		1812	Romanticism	oil on canvas		
+	Théodore Géricault	The Raft of the Medusa (1819) oil on canvas		oil on canvas	Romanticism			
+	Eugène Delacroix	The Women of Algiers		1834	Romanticism	oil on canvas		
+	J.M.W. Turner	The Fighting Temeraire tugged to her last berth to be broken up, 1838		1839	Romanticism	oil on canvas		
+	J.M.W. Turner	Rain, Steam, and Speed – The Great Western Railway		1844	Romanticism			
+	Caspar David Friedrich	The Traveler Above a Sea of Clouds		c. 1818	Romanticism	oil on canvas		
+	Caspar David Friedrich	Periods of Life		1834-1835	Romanticism	oil on canvas		
+	Thomas Couture	The Romans of Decadance		1847	Romanticism	oil on canvas		
+	Myron	Discobolus		c. 450	Ancient Rome		Greek	
+	Thomas Hart Benton	People of Chilmark		1920	Social Realism	oil on canvas		
+	Georgia O'Keefe	Orchid		1941	American Modernism	pastel on paper-covered board		
+	Edward Hopper	City Sunlight		1954	Realism	oil on canvas		
+	Andrew Wyeth	Christina's World		1948	Realism			
+	Diego Rivera	detail from The Great Tenochtitlan		1945	Social Realism, Mexican Mural Movement	fresco		
+	Henri Matisse	The Peasant Blouse		1940	Fauvism, Impressionism	oil on canvas		
+	Georges Rouault	The Old King		1916-1936	Fauvism, Expressionism			
+	Georges Roualt	Christ on the Cross		c. 1920	Fauvism, Expressionism			
+	Pablo Picasso	The Young Ladies of Avignon		1907	Cubism	oil on canvas		
+	Marcel Duchamp	King and Queen Surrounded by Swift Brides		1911	Cubism			
+	Fernand Léger	The Builders		1951	Tubism, Cubism, Modern Art	oil on canvas		
+	August Macke	Spaziergang im Garten		1914	Expressionism	oil on canvas		
+	Max Beckmann	Family Portrait		1920	Expressionism, New Objectivity	oil on canvas		
+	Otto Dix	The Seven Deadly Sins		1933	New Objectivity (Neue Sachlichkeit), Post-Expressionism	mixed media on panel		
+	Mark Rothko	Untitled		c. 1950	Color Field, Abstract Expressionism	oil on paper glued to linen		
+	Paul Signac	The Papal Palace at Avignon		1900	Post-Impressionism, Pointillism	oil on canvas		
+	Paul Signac	The Red Bouy, St. Tropez		1895	Post-Impressionism, Pointillism	oil on canvas		
+	Paul Cézanne	The Cardplayers		1892-1895	Post-Impressionism	oil on canvas		
+	Paul Cézanne	Mont Sainte-Victoire above the Tholonet Road		1896-1898	Post-Impressionism	oil on canvas		
+	Paul Gauguin	Madame Ginoux in the Café de la Gare in Arles		1888	Post-Impressionism	oil on canvas		
+	Paul Gauguin	The Meal, Bananas		1891	Post-Impressionism	oil on paper, transferred to canvas		
+	Vincent van Gogh	Self-Portrait		1889	Post-Impressionism	oil on canvas		
+	Henri de Toulouse-Lautrec	At the Moulin Rouge		1892, 1895	Post-Impressionism	oil on cardboard		
+	James Ensor	Remarkable Masks		1891	Expressionism, Symbolism	oil on canvas		
+	Amedeo Modigliani	Portrait of Chaim Soutine		1916	Post-Impressionism, Modern Art	oil on canvas		
+	Philip Wilson Steer	Boulogne Sands		1888-1891	Impressionism	oil on canvas		
+	Edvard Munch	The Scream		1893	Expressionism, Symbolism	tempera and pastel on cardboard		
+	Félix Vallotton	The Ball		1899	Realism, Post-Impressionism	oil on canvas		
+	Odilon Redon	The Cyclops		1898-1900	Post-Impressionism	oil on panel \		
+	Maurice Prendergast	Summer; New England		1912	Post-Impressionism	oil on canvas		
+	Claude Monet	Poppies at Argenteuil		1873	Impressionism	oil on canvas		
+	Claude Monet	Gare Saint Lazare		1877	Impressionism	oil on canvas		
+	Auguste Renoir	The Swing		1876	Impressionism	oil on canvas		
+	Pierre-Auguste Renoir	Path in the High Grass		1874	Impressionism	oil on canvas		
+	Berthe Morisot	The Harbor at Lorient		1869	Impressionism	oil on canvas		
+	Mary Cassatt	The Caress		1902	Impressionism	oil on canvas		
+	Marie Bracquemond	On the Terrace at Sèvres with Fantin-Latour		1880	Impressionism	oil on canvas		
+	Albert Pinkham Ryder	Moonlight		1880-1885	Tonalism	oil on wood		
+	Childe Hassam	The South Ledges, Appledore		1913	Impressionism	oil on canvas		
+	John Everett Millais	Christ in the House of His Parents		1850	Pre-Raphaelite, Realism	oil on canvas		
+	John William Waterhouse	The Lady of Shallot		1888	Pre-Raphaelite	oil on canvas		
+	Sir Lawrence Alma-Tadema	Joseph, Overseer of Pharaoh's Graineries		1874	Academicism	oil on canvas		
+	Alexandre Cabanel	The Birth of Venus		1863	Academicism, Neoclassicism, Romanticism	oil on canvas		
+	Théodore Chassériau	The Tepidarium		1853	Romanticism, Neoclassicism	oil on canvas		
+	Jean Léon Gérôme and Aimé Morot	The Gladiators (Monument to Gérôme)		1878	Academicism	bronze		
+	Léon Augustin Lhermitte	Paying the Harvesters		1882	Realism	oil on canvas		
+	Carolus-Duran	The Convalescent (The Wounded Man)		c. 1860	Academicism, Realism	oil on canvas		
+	Armand Guillaumin	Sunset at Ivry		1874	Impressionism	oil on canvas		
+	Hans Gude	Port of Refuge on the Norwegian Coast		1873	Romanticism			
+	Thomas Eakins	John Biglin in a Single Scull		c. 1873	Realism	Watercolor		
+	Thomas Moran	Cliffs of the Upper Colorado River, Wyoming Territory		1893	Romanticism, Hudson River School	oil on canvas		
+	Jean-Baptiste-Camille Corot	A Morning Dance of the Nymphs		c. 1850	Romanticism	oil on canvas		
+	Jean-François Millet	The Gleaners		1857	Realism	oil on canvas		
+	Jacques-Louis David	Death of Marat		1793	Neoclassicism	oil on canvas		
+	Jean-Auguste-Dominique Ingres	Apotheosis of Homer		1827	Neoclassicism			
+	Canaletto	The Pier, Seen from the Basin of San Marco		c. 1730-1735	Vedute, Landscapes			
+	Giovanni Battista Tiepolo	America (detail of a ceiling fresco)		1753	Rococo			
+	Joseph Wright of Derby	The Old Man and Death		1774	Romanticism	oil on canvas		
+	Annibale Carracci	The Triumph of Bacchus		1597-1601	Baroque	fresco		
+	Gianlorenzo Bernini	The Ecstasy of Saint Theresa		1644-1647	Baroque	marble		
+	Pietro da Cortona	Triumph of the Barberini		1633-1639	Baroque	fresco, Ceiling fresco in the Salone, Palazzo Barberini, Rome		
+	Hyacinthe Rigaud	Louis XIV		1701	Baroque	oil on canvas		
+	Pierre Puget	Milon of Croton		1670-1683	Baroque	marble		
+	Frans Hals	The Clown with the Lute		1625	Baroque	oil on wood		
+	Jacob van Ruisdael	The Jewish Graveyard		c. 1655	Baroque	oil on canvas		
+	David Teniers the Younger	Archduke Leopold Wilhelm of Austria in His Art Gallery		1651	Baroque			
+	Benvenuto Cellini	Perseus with the Head of Medusa		1545	Mannerism			
+	Germain Pilon	The Three Graces; Monument to the heart of Henri II		1560-1566	Mannerism	marble		
+	Tintoretto	Transport of the Body of St. Mark		1562-1566	Renaissance	oil on canvas		
+	Paolo Veronese	The Wedding at Cana		1562-1563	Mannerism			
+	Pieter Bruegel	The Parable of the Blind Leading the Blind		1568	Early Renaissance, Northern Renaissance	tempera on canvas		
+	Quentin Matsys	Money Changer and His Wife		1514	Northern Renaissance	Oil on panel		
+	Joachim Patinir	Charon crossing the Styx		c. 1520	Northern Renaissance			
+	Albrecht Dürer	Emperor Charlemagne and Emperor Sigismund		c. 1512	Northern Renaissance			
+	Paollo Uccello	The Battle of San Romano		c. 1438-40	Early Renaissance	oil on panel		
+	Pierro della Francesca	The Flagellation of Christ		c. 1459	Early Renaissance	oil on panel		
+	Leonardo da Vinci	Last Supper		1495-98	High Renaissance	fresco		
+	Leonardo da Vinci	Mona Lisa		1503-1507	High Renaissance	oil on panel		
+	Leonardo da Vinci	The Virgin and Child with St. Anne		c. 1510	High Renaissance	oil on panel		
+	Michelangelo	David		1501-1504	High Renaissance	marble		
+	Giorgione	Pastoral Concert		c. 1510	High Renaissance	oil on canvas		
+	Titian	King Francis I and Sultan Suleiman the Magnificient		c. 1530	High Renaissance			
+	Giotto	Lamentation (the Mourning of Christ)		1303 - 1305	Early Renaissance	fresco		
+	Simone Martini	The Miracle of Augustine's Saving the Child Falling from the Window		1328	International Gothic	tempera on wood		
+	Ambrogio Lorenzetti	The Effects of Good Government on the City Life		1338	Byzantine, Gothic	fresco		
+	Andrea Pisano	Detail of the panels for the South Doors of the Florence Baptistery		1330-1336	Gothic			
+	Jacopo della Quercia	Madonna and Child		1406	Early Renaissance	marble		
+	Lorenzo Ghiberti	The Gates of Paradise	The doors of the Florence baptistry	1425-1452	Early Renaissance			
+	Gentile da Fabriano	Adoration of the Magi		1423	International Gothic	Tempera on wood		
+	Donatello	St. George		c. 1417	Early Renaissance	marble sculpture		
+	Hiroshige	Man on Horseback Crossing a Bridge		1834-1842	Ukiyo-e			
+	Hiroshige	Shōno's White Rain (白雨)		c. 1830s	Ukiyo-e			
+	Zhan Ziqian	Strolling About in Spring		AD 581–618	Sui Dynasty			
+	Han Gan	A Man Herding Horses		706–783 AD	Tang Dynasty			
+	Su Hanchen	Playing Children		c. 1150 AD	Northern Song			
+	Kun Can	Świątynia Bao’en		1664	Qing Dynasty		China	
+	Dong Yuan	Mountain Hall (洞天山堂图)		c. 934–962	Five Dynasties and Ten Kingdoms period			
+	Dong Yuan	Xiao and Xiang Rivers (潇湘图)			Five Dynasties and Ten Kingdoms period	Part of a handscroll, ink and color on silk		
+	Liang Kai	Shakyamuni Emerging from the Mountains		Song Dynasty	Song Dynasty			
+	Liang Kai	Drunken Celestial		Song Dynasty	Song Dynasty			
+	Zhang Zeduan	Along the River During Qingming Festival		18th century remake	Song Dynasty			
+	Gu Hongzhong	Detail of Night Revels of Han Xizai		Song Dynasty (960–1279) remake of a 10th century original	Five Dynasties and Ten Kingdoms period			
+	Wang Meng	Forest Grotto in Juqu		Yuan Dynasty	Yuan Dynasty			
+	Wang Meng	Writing Books under the Pine Trees		Yuan Dynasty	Yuan Dynasty			
+	Wang Shimin	Snow Over Rivers and Mountains		1668	Qing Dynasty			
+	Ren Xiong	After the poems of Da Mei		late Qing Dynasty	Qing Dynasty			
+	Ren Xiong	(title not known)		late Qing Dynasty	Qing Dynasty			
+	Rèn Yi (Ren Bonian)	Portrait of Gao Yong's Wife		1886	Shanghai School			
+	Rèn Yi (Ren Bonian)	Playing the Flute		1860-80	Shanghai School			
+	Zhao Zhiqian	Flowers		1859	Late Qing Dynasty			
+	Xu Beihong	Galloping Horse		?	Chinese Ink Drawings			
+	Kano Eitoku	Cypress Tree Byōbu		1590	Kanō School of Japanese Painting	folding screen		
+	Sesshu	Landscape of fall and winter		c. 1505	Rinzai Zen Buddhism		Japan	
+	Tawaraya Sōtatsu	Fūjin and Raijin		17th cent.	Rimpa School			
+	Hokusai	"Red Fuji from the series ""Thirty-six Views of Mount Fuji"""		1826-1833	Ukiyo-e		Japan	
+	José Clemente Orozco	Mural Omniciencia		1925	Social Realism, Mexican Mural Movement			
+	Remedios Varo	Useless Science or The Alchemist		1955	Surrealism			
+	Vasco Prado	Model Resting		1999	Modern Sculpture			
+	Paul Gauguin	Spirit of the Dead Keeps Watch		1892	Post-Impressionism			
+	Kasimir Malevich	Black Square		1915	Suprematism			
+	Andy Warhol	Campbell's Soup Cans		1962	Pop-Art	Synthetic polymer paint on thirty-two canvases		
+	Raja Ravi Varma	Draupadi with her five husbands - the Pandavas		c. 1900	Indian Art			
+	Sahibdin	The War of Lanka		1649-53	Rajasthan		India	It depicts the monkey army of the protagonist Rama (top left, blue figure) fighting the demon-king of the king of Lanka, Ravana in order to save Rama's kidnapped wife Sita. The painting depicts multiple events in the battle against the three-headed demon general Trisiras, in bottom left – Trisiras is beheaded by the monkey-companion of Rama – Hanuman.
+	Sharaku	Otani Oniji III in the Role of the Servant Edobei		1794	Ukiyo-e			
+	Herrad of Landsberg	Hell  (an illustration from the Hortus deliciarum)		c. 1180	Proto-Renaissance			
+	Fra Angelico	The Last Judgement, Hell,		c. 1431	Early Renaissance			
+	William-Adolphe Bouguereau	Dante and Virgil in Hell		1850	Academicism, Neoclassicism, Romanticism			
+	Georgia O'Keeffe	Ram's Head White Hollyhock and Little Hills		1935	American Modernism			
+	Warner Sallman	The Head of Christ		1941	Commerical Art			This 1940 painting has been reproduced over 500 million times, making it one of the most popular works of art in history.
+	Raphael	"The School of Athens"""	Detail of Aristotle and Plato	1509	High Renaissance			
+	Suzuki Harunobu	Murasaki Shikibu		c. 1767	Ukiyo-e, Edo Period			
+	Masaccio	The Expulsion of Adam and Even from Eden		1426–1427	Early Renaissance			Fig leaves added in 1980 after the painting was cleaned.
+	Jeong Seon	A secluded house near a valley in Mt. Inwangsan		c.1742	Southern School		Korea	
+	Guo Xi	Autumn in the River Valley		c. 1020–1090 AD	Northern Song Dynasty		China	
+	José Clemente Orozco	Dive Bomber		1940	Social Realism, Mexican Mural Movement			
+	Umberto Boccioni	Unique Forms of Continuity in Space		1913	Futurism			(shown on the 20-cent euro coin)
+	Hans Holbein the Younger	The Body of the Dead Christ in the Tomb		1521	Northern Renaissance			
+	Jean-Michel Basquiat	Untitled		1982	Neo-Expressionism, Primitivism			
+	Peter Paul Rubens	Self-Portrait		1623	Baroque		Flemish (Southern Netherlands)	
+	Peter Paul Rubens	The Elevation of the Cross		c. 1610-1611	Baroque	triptych	Flemish (Southern Netherlands)	
+	Peter Paul Rubens	The Adortation of the Magi (2 of 3)		c. 1618-19	Baroque	oil on canvas	Flemish (Southern Netherlands)	
+	Peter Paul Rubens	Adoration of the Magi (1 of 3)		1609	Baroque		Flemish	
+	Raphael	The School of Athens	a self-portrait of Raphael in the background	1510-11	High Renaissance			
+	Gustav Klimt	The Kiss		1907-08	Symbolism	oil on canvas	Austria	
+	Gustav Klimt	Portrait of Adele Bloch-Bauer I		1907	Symbolism	oil, silver, and gold on canvas	Austria	
+	Gustav Klimt	The Sunflower		c. 1906	Symbolism		Austria	
+	Gustav Klimt	Avenue in Schloss Kammer Park		1912	Symbolism		Austria	
+	Gustav Klimt	Hope II		1907-08	Symbolism			
+	Gustav Klimt	Danaë		1907	Symbolism		Austria	
+	Gustav Klimt	Mäda Gertrude Primavesi		1912	Symbolism			
+	Gustav Klimt	Judith and the Head of Holofernes	(also known as Judith I)	1901	Symbolism			
+	Gustav Klimt	The Three Ages of Woman		1905	Symbolism			
+	William Blake	The Ancient of Days		c. 1794	Romanticism			
+	Vincent van Gogh	The Starry Night		1889	Post-Impressionism	oil on canvas	Dutch	
+	Vincent van Gogh	Skull of a Skeleton with Burning Cigarette		1885–1886	Post-Impressionism			
+	Vincent van Gogh	Bedroom in Arles	(3rd Version)	1888	Post-Impressionism	Oil on canvas		
+	Vincent van Gogh	Self-Portrait (with Bandaged Ear)		1889	Post-Impressionism			
+	Vincent van Gogh	The Church at Auvers		1890	Post-Impressionism			
+	Vincent van Gogh	Portrait of Dr. Gachet		1890	Post-Impressionism			
+	Vincent van Gogh	Sorrowing Old Man ('At Eternity's Gate')		1890	Post-Impressionism			
+	Vincent van Gogh	Irises		1889	Post-Impressionism			
+	Caravaggio	The Calling of Saint Matthew		1599–1600	Baroque			
+	Caravaggio	The Seven Works of Mercy		1606-07	Baroque			
+	Caravaggio	St. Jerome		1605-06	Baroque			
+	Caravaggio	The Crucifixion of Saint Peter		1601	Baroque			
+	Caravaggio	David with the Head of Goliath		1609–1610	Baroque			
+	Damien Hirst	The Physical impossibility of Death in the Mind of Someone Living		1991	Contemporary Art			
+	Jackson Pollock	Autumn Rhythm (Number 30)		1950	Abstract Expressionism			
+	Jackson Pollock	No. 5		1948	Abstract Expressionism			
+	Claude Monet	Impression, Sunrise		1872	Impressionism			
+	Claude Monet	Study of a Figure Outdoors: Woman with a Parasol, facing left.		1886	Impressionism			
+	Claude Monet	Jardin à Sainte-Adresse		1867	Impressionism			
+	Georges Seurat	The Circus		1891	Post-Impressionism, Pointillism		French	
+	Georges Seurat	Le Chahut		1889-90	Post-Impressionism, Pointillism		French	
+	Raphael	St. George and the Dragon	(early version)	c. 1504	High Renaissance			Raphael has two paintings of St. George and the Dragon.
+	Raphael	The Wedding of the Virgin		1504	High Renaissance			His most sophisticated altarpiece of this period.
+	Raphael	Saint Catherine of Alexandria		1507	High Renaissance			
+	Raphael	Madonna of the Meadow		1505	High Renaissance			
+	Raphael	The Deposition of Christ		1507	High Renaissance			
+	Raphael	Portrait of Pope Julius II		c. 1512	High Renaissance			
+	Raphael	Portrait of Bindo Altovit		c. 1514	High Renaissance			
+	Raphael	Sistine Madonna		1513	High Renaissance			peripheral figures: Saint/Pope Sixtus IV (left) and Saint Barbara (right)
+	Leonardo da Vinci	The Vitruvian Man		c. 1490	High Renaissance	Pen and ink with wash over metalpoint on paper		
+	Leonardo da Vinci	Lady with an Ermine		1489–90	High Renaissance			
+	Leonardo da Vinci	portrait of a man in red chalk (self-portrait)		c. 1510	High Renaissance			
+	Leonardo da Vinci	St. John the Baptist		1513-16	High Renaissance			
+	Rembrandt	Self-Portrait		1660	Baroque			
+	Rembrandt	The Archangel leaving Tobias		1637	Baroque			
+	Rembrandt	Jeremiah Lamenting the Destruction of Jerusalem		c. 1630	Baroque			
+	Rembrandt	Abraham and Isaac		1634	Baroque			
+	Auguste Rodin	The Kiss		1882	Modern Sculpture			
+	J.M.W. Turner	The Slave Ship		1840	Romanticism			"Originally titled ""Slavers Throwing overboard the Dead and Dying—Typhon coming on"""
+	Rembrandt	The Storm on the Sea of Galilee		1633	Baroque			
+	Michelangelo	Pietà		1498–1499	High Renaissance	Marble		
+	Michelangelo	The Last Judgment		1536-1541	High Renaissance	fresco		From the altar wall of the Sistine Chapel
+	Michelangelo	The Sistine Chapel ceiling		1508-1512	High Renaissance			
+	Michelangelo	The Crucifixion of St. Peter		c.1546–1550	High Renaissance			
+	Michelangelo	The Conversion of Saul		c. 1542–1545	High Renaissance	fresco		
+	Michelangelo	The Entombment		c. 1500–1501	High Renaissance			
+	Caravaggio	The Entombment of Christ		1602-03	Baroque			
+	Caravaggio	Conversion of Saint Paul		1601	Baroque			
+	Caravaggio	Love Conquers All		1601-02	Baroque	oil on canvas		Known in English by a variety of names including Amor Victorious, Victorious Cupid, Love Triumphant, Love Victorious, or Earthly Love
+	Caravaggio	Salome with the Head of John the Baptist		c. 1609	Baroque	oil on canvas		
+	Pablo Picasso	Boy with a Pipe		1905	"""Rose Period"""			
+	Pablo Picasso	Portrait of Gertrude Stein		1906	"""Rose Period"""			
+	Pablo Picasso	La Vie		1903	"""Blue Period"""			
+	Pablo Picasso	The Old Guitarist		1903	"""Blue Period"""			
+	Pablo Picasso	Portrait of Igor Stravinsky		c. 1920	Expressionism			
+	Pablo Picasso	Femme assise dans un fauteuil (Eva), Woman in an Armchair		1913	Cubism			
+	Pablo Picasso	Don Quixote		1955	Expressionism			
+	Pablo Picasso	Massacre in Korea		1951	Expressionism			
+	Gustave Courbet	L'Origine du monde (The Origin of the World)		1866	Realism			
+	Marc Chagall	Calvary (Golgotha)		1912	Cubism, Expressionism			
+	Francisco Goya	The Nude Maja		c. 1800	Romanticism		Spain	"Without a pretense to allegorical or mythological meaning, the painting was ""the first totally profane life-size female nude in Western art"""
+	Francisco Goya	Witches' Sabbath (The Great He-Goat)		1819-1823	Romantic		Spain	
+	Francisco Goya	Two Old Men Eating Soup or, The Witchy Brew		1819-1823	Romantic			
+	Francisco Goya	Witches' Sabbath		1789	Romantic			
+	Francisco Goya	Witches' Flight		1797–98	Romantic			
+	Sandro Botticelli	Portrait of Dante Alighieri		1495	Early Renaissance			
+	Sandro Botticelli	The Virgin and Child (The Madonna of the Book)		1480	Early Renaissance			
+	Bruegel the Elder	The Peasant Wedding		1566–69	Early Renaissance, Northern Renaissance	oil on panel		
+	Antonio da Correggio	Assumption of the Virgin		1526–1530	Late Renaissance			A fresco by the Italian Late Renaissance artist, decorating the dome of the Cathedral of Parma, Italy.
+	René Magritte	The Lovers		1928	Surrealism	oil on canvas		
+	René Magritte	Golconda		1953	Surrealism			
+	René Magritte	The Beautiful Relations		1967	Surrealism			
+	Paul Cézanne	The Bathers		1898–1905	Post-Impressionism	oil on canvas		
+	Salvador Dali	Dream Caused by the Flight of a Bee Around a Pomegranate a Second Before Awakening		1944	Surrealism			
+	Salvador Dalí	The Temptation of St. Anthony		1946	Surrealism			
+	Salvador Dali	Christ of Saint John of the Cross		1951	Surrealism			
+	Salvador Dali	Soft Watch at the Moment of First Explosion		c. 1954	Surrealism			
+	Edvard Munch	Weeping Nude		1913–14	Expressionism, Symbolism			
+	Edvard Munch	Madonna		1894	Expressionism, Symbolism			
+	Evard Munch	The Dance of Life		1899–1900	Expressionism, Symbolism			
+	Edvard Munch	Ashes		1894	Expressionism, Symbolism			
+	Wassily Kandinsky	On White II		1923	Expressionism			
+	Diego Rivera	Two Women		1914	Cubism			(Dos Mujeres, portrait of Angelina Beloff and Maria Dolores Bastian)
+	Pierre-Auguste Renoir	Self-portrait		1875	Impressionism		French	
+	Andy Warhol	Marilyn		1962	Pop-Art			
+	Andy Warhol	Mao Tse Tung		1973	Pop-Art			
+	Johannes Vermeer	The Allegory of Painting	"aka ""The Art of Painting"""	c. 1665-68	Baroque, Dutch Golden Age	oil on canvas		
+	Johannes Vermeer	The Milkmaid		c. 1658	Baroque, Dutch Golden Age			
+	Johannes Vermeer	The Girl with the Wine Glass	"or, ""A Lady and Two Gentlemen"""	1659-1660	Baroque, Dutch Golden Age			
+	Paul Nash	We are Making a New World		1918	Surrealism			
+	Paul Nash	Battle of Germany		1944	Surrealism			
+	Winslow Homer	Breezing Up (A Fair Wind)		1873–76	Realism	oil on canvas		
+	José Clemente Orozco	Gods of the Modern World		1932-34	Social Realism, Mexican Mural Movement	mural		Dartmouth mural
+	Tintoretto	Miracle of the Slave		1548	Renaissance			It portrays an episode of the life of St. Mark, patron saint of Venice, taken from Jacopo da Varazze's Golden Legend. The scene shows, in the upper part, the saint intervening to make invulnerable a slave about to be martyred for his veneration of another saint's relics. All the figures are inscribed into an architectonic scenario.
+	Peter Paul Rubens	The Disembarkation at Marseilles		c. 1624	Baroque			
+	Eugène Delacroix	Orphan Girl at the Cemetary		1823	Romanticism			
+	Jacques-Louis David	The Emperor Napoleon in His Study at the Tuileries		1812	Neoclassicism			
+	Thomas Hart Benton	Achelous and Hercules		1947	Social Realism	mural		
+	Georgia O'Keeffe	Blue and Green Music		1919 - 1921	American Modernism			
+	Paul Gauguin	Where Do We Come From? What Are We? Where Are We Going?		1897	Post-Impressionism			
+	Paul Gauguin	Still Life with Profile of Laval		1886	Post-Impressionism			
+	William-Adolphe Bouguereau	The Birth of Venus		1879	Academicism, Neoclassicism, Romanticism			
+	William-Adolphe Bouguereau	Charity		1878	Academicism, Neoclassicism, Romanticism			
+	William-Adolphe Bouguereau	A Young Girl Defending Herself Against Eros		1880	Academicism, Neoclassicism, Romanticism			
+	John William Waterhouse	Cleopatra		1888	Pre-Raphaelite			
+	Peter Paul Rubens	Martyrdom of St. Thomas		1636-38	Baroque			
+	Caravaggio	The Incredulity of Saint Thomas		1601-02	Baroque			
+	Herbert James Draper	Lamia		1909	Classicism			
+	Henri Matisse	The Dance I		1909	Expressionism, Fauvism			One of the cornerstones of 20th-century modern art.
+	Vincent van Gogh	Sunflowers	(Vase with Fifteen Sunflowers)	1888	Post-Impressionism			
+	Donatello	David		c.1445	Early Renaissance			
+	Hans Hofmann	The Gate		1959-60	Abstract Expressionism			
+	Franz Kline	Painting Number 2		1954	Modern Art			
+	Jean Metzinger	Fruit and a Jug on a Table		1916-17	Cubisim			
+	Reza Abbasi	Two Lovers		1630	Persian Miniaturism			
+	Hokusai	Two Lovers		c. 1815	Shunga (Japanese erotic art)			
+	Andrea Mantegna	The Lamentation Over the Dead Christ		c. 1480	Renaissance			
+	Frederic Edwin Church	The Heart of the Andes		1859	Luminism, Hudson River School			
+	Domenico Remps	Cabinet of Curiosities		1690s	Trompe-l’oeil			
+	Hans Memling	Portrait of Barbara van Vlaenderbergh Moreel		c. 1480	Northern Renaissance			
+	Cimabue	Madanno Enthroned		c. 1280	Byzantine, Proto-Renaissance			
+	Philip Sutton	Whiltshire Landscape		1962	Abstract Expressionism			
+	Claude Monet	Giverny		1890-91	Impressionism			
+	James Ensor	Fireworks		1887	Expressionism			
+	William Holman Hunt	Our English Coasts		1852	Pre-Raphaelite			
+	Romaine Brooks	At the Seashore		1912	Symbolism, Aestheticism			
+	Jan van Eyck	Giovanni Arnolfini and His Wife		1434	Early Renaissance, Northern Renaissance			
+	Caspar David Friedrich	Abbey Among Oak Trees	1809 or 1810	1809 or 1810	Romanticism			
+	Caspar David Friedrich	The Sea of Ice		1823-24	Romanticism			"This scene has been described as ""a stunning composition of near and distant forms in an Arctic image""."
+	Mary Cassatt	The Boating Party		1893-94	Impressionism			
+	Joan Miro	The Farm		1921-22	Surrealism			
+	Joan Miro	Still Life with Old Shoe		1937	Surrealism			
+	Sandro Chia	The Idleness of Sisyphus		1981	Transavantgarde, Neo-Expressionism			
+	Alexej von Jawlensky	Portrait of Alexander Sakharoff		1909	Expressionism			
+	Alexej von Jawlensky	Young Girl in a Flowered Hat		1910	Expressionism			
+	Alexej von Jawlensky	Still Life with Flask, Fruit, and Figure		1907	Expressionism			
+	Jan and Hubert van Eyck	Ghent Altarpiece	(exterior)	c.1432	Early Renaissance, Northern Renaissance	Polyptych	Flemish (Belgium)	Since its creation the altarpiece has been considered one of Northern European art's masterpieces and one of the world's treasures.
+	Jan and Hubert van Eyck	Ghent Altarpiece	(upper interior)	c. 1432	Early Renaissance, Northern Renaissance	Polyptych	Flemish (Belgium)	
+	Jan and Hubert van Eyck	Ghent Altarpiece	(lower center of interior)	c. 1432	Early Renaissance, Northern Renaissance	Polyptych		
+	Kenneth Noland	Bridge		1964	Color Field, Abstract Expressionism, Minimalism			
+	Francis Bacon	Study after Velázquez's Portrait of Pope Innocent X		1953	Expressionism, Surrealism, Contemporary Art			"This is probably the most famous of Bacon's ""Screaming Popes"" -- his series of 45 variations of the original Velázquez portrait of Pope Innocent X."
+	Diego Velázquez	Portrait of Innocent X		c. 1650	Baroque			
+	Pellegrino Tibaldi	The Adoration of the Shepherds		c. 1546	Renaissance			
+	Guido Reni	The Archangel Michael Defeating Satan		1635	Baroque			
+	Raphael	St. Michael Vanquishing Satan		1518	High Renaissance			
+	Adriaen van Utrecht	Vanitas: Still Life with Bouquet and Skull		c.1642	Baroque			
+	Henry Ossawa Tanner	The Annunciation		1898	Realism			
+	Henry Ossawa Tanner	The Seine		c. 1902	Impressionism			One of three paintings by African Americans on display in 2012 in the National Gallery of Art's American Art galleries.
+	Gerard van Honthorst	The Concert.		1623	Caravaggisti, Baroque			
+	Gerard van Honthorst	The Matchmaker	"or ""The Procuress"""	1625	Dutch Golden Age, Caravaggisti, Baroque			
+	Leonardo da Vinci	Portrait of Ginevra de’ Benci		1474-78	High Renaissance			
+	Raphael	Madonna and Child		c. 1505	High Renaissance			
+	Nicolas Poussin	The Assumption of the Virgin		c. 1626	Classicism, Baroque			
+	Rembrandt	Self-portrait		1659	Baroque, Dutch Golden Age			
+	Henry Ossawa Tanner	The Thankful Poor		1894	Realism			
+	James Abbott McNeill Whistler	Symphony in White, No. 1: The White Girl		1862	Tonalism			Whistler was the founder of the tonalist style.
+	Alfred Sisley	The Bridge at Villeneuve-la-Garenne		1872	Impressionism			
+	Berthe Morisot	Lady at her Toilette		1875/1880	Impressionism			
+	Édouard Manet	Berthe Morisot With a Bouquet of Violets		1872	Realism			
+	Claude Monet	Bouquet of Sunflowers		1880	Impressionism			
+	Camille Pissarro	Jallais Hill, Pontoise		1867	Impressionism, Post-Impressionism			
+	Carl Rottmann	Corinth with Akrocorinth		1847	Romanticism			
+	Jean-Auguste-Dominique Ingres	Grande Odalisque		1814	Neoclassicism			
+	Leonardo da Vinci	Portrait of an Unknown Woman		1490-96	High Renaissance			
+	Henri Rousseau	The Dream		1910	Post-Impressionism			
+	Gustave Caillebotte	Paris Street in Rainy Weather		1877	Impressionism			
+	Gustav Klimt	Beethovenfries		1902	Symbolism			
+	Gustav Klimt	The Virgin		1913	Symbolism			
+	El Greco	View of Toledo		1596-1600	Mannerism, Renaissance			
+	Lucas Cranach the Elder	Martin Luther		1529	Renaissance			
+	Lucas Cranach the Elder	The Fountain of Youth		1546	Renaissance			
+	Georges Seurat	Circus Sideshow		1887	Post-Impressionism, Pointillism			
+	Ernst Ludwig Kirchner	Female Artist		1910	Expressionism			
+	Alfred Sisley	The Hill Path		1879	Impressionism	Impressionism		
+	Mark Tansey	Triumph Over Mastery II		1987	Contemporary Art			
+	Johannes Vermeer	The Geographer		c. 1668-69	Baroque, Dutch Golden Age			
+	Salvador Dali	The Enigma of Desire		1929	Surrealism			
+	John Singer Sargent	Smoke of Ambergris		1880	American Renaissance, Impressionism			
+	Gustav Klimt	Death and Life		c.1910	Symbolism			
+	Caravaggio	Young Sick Bacchus		c. 1592/93	Baroque			
+	Caravaggio	Judith Beheading Holofernes		1598-99	Baroque			
+	Artemisia Gentileschi	Judith Slaying Holofernes		c.1612	Baroque			
+	Vincent van Gogh	Cafe Terrace at Night	(The Cafe Terrace on the Place du Forum)	1888	Post-Impressionism			
+	Sultān Muhammad	The Ascent of Muhammad to Heaven		1539-43	Persian Art			
+	Honoré Daumier	Don Quixote and Sancho Panza		c. 1868	Realism			
+	Edward Poynter	Andromeda		1869	Classicism			
+	Pierre-Étienne Monnot	Andromeda		1700-04	Late Baroque			(sometimes wrongly attributed to Domenico Guidi)
+	Michelangeo	Moses		c. 1513–1515	High Renaissance			
+	Daniel Chester	Abraham Lincoln		1920	American Renaissance			
+	Bernini	Apollo and Daphne		1622-25	Baroque			
+	Edvard Eriksen	The Little Mermaid		1913	Neoclassicism			A major landmark in Copenhagen, Denmark.
+	Paul Landowski	Christ the Redeemer		1922-31	Monument Sculpture			Famous landmark in Rio de Janeiro, Brazil
+	unknown artist	Dying Gaul	"(aka ""Dying Galatian"" and ""Dying Gladiator"")"	c. 230-220 BC	Hellenistic			A Roman marble copy of a Hellenistic work of the late 3rd century BC.
+	Benvenuto Cellini	Salt cellar for Francis I		1540-43	Mannerism			
+	Auguste Rodin	Burghers of Calais		1884-86	Modern Sculpture			
+	Edgar Degas	Little Fourteen-Year-Old Dancer		executed 1880; cast 1922	Realism	Sculpture (additive)		
+	unknown Greek artist	Winged Victory of Samothrace		c. 200-190 BC	Ancient Greece			
+	Max Klinger	Beethoven		1902	Symbolism			
+	Pablo Picasso	Glass of Absinthe		1914	Abstract Expressionism			
+	Polykleitos	The Dresden Youth	marble copy after bronze original	c. 430 BC	Ancient Greece			
+	Harriet Hosmer	Beatrice Cenci		1857	Neoclasiicism			
+	Aristide Maillol	The Mediterranean		1905	Modern Sculpture			
+	Camille Claudel	The Waltz		1895	Modern Sculpture			
+	Raphael	Self-portrait		1504-06	High Renaissance	oil on board		
+	Michelangelo	Madonna and Child		1504	High Renaissance			
+	Michelangelo	The Last Judgment	(detail showing Christ surrounded by prominent Saints)	1536-1541	High Renaissance	fresco		The figures surrounding Christ include Saints Catherine of Alexandria, Peter, Lawrence, Bartholomew, Paul, Sebastian, John the Baptist, and others.
+	Giorgione	The Tempest		c. 1507	High Renaissance			
+	Édouard Manet	The Spanish Singer		1860	Realism			
+	Édouard Manet	Luncheon on the Grass		1863	Realism, Impressionism			
+	Camille Pissarro	Boulevard Monmartre		1897	Impressionism			
+	Gustave Courbet	A Burial at Ornans		1849-50	Realism			"Exhibition at the 1850–1851 Paris Salon created an ""explosive reaction"" and brought Courbet instant fame."
+	Honoré Daumier	The Third Class Wagon		1862–1864	Realism			
+	Jean-Baptiste-Camille Corot	The Bridge at Narni		1826	Realism			
+	Jean-Baptiste-Camille Corot	The Piazzetta seen from the Riva degli Schiavoni		1835-1845	Realism			
+	Jean-François Millet	The Sower		1850	Realism			
+	Gustave Courbet	The Stonebreakers		1849	Realism			
+	Eugène Delacroix	Death of Sardanapalus		1828	Romanticism			
+	Thomas Cole	The Voyage of Life: Childhood		1842	Romanticism			
+	Thomas Cole	The Savage State		1836	Romanticism			
+	Thomas Cole	The Oxbow		1836	Romanticism			
+	Thomas Cole	The Titan's Goblet		1833	Romanticism			
+	Pablo Picasso	The Weeping Woman		1937	Cubism			
+	Rembrandt	Bathsheba at Her Bath		1654	Baroque			
+	Bruegel the Elder	The Hunters in the Snow	or, The Return of the Hunters	1565	Early Renaissance, Northern Renaissance			
+	Rogier van der Weyden	Portrait of a Lady		c. 1460	Early Renaissance, Northern Renaissance			
+	Giovanni Battista Gaulli	The Triumph of the Name of Jesus		1676-79	Baroque			
+	Gian Lorenzo Bernini	Chair of Saint Peter		1647-53	Baroque	Sculpture		
+	Parmigianino	Madonna with the Long Neck	(Madonna and Child with Angels and St. Jerome)	1534-40	High Renaissance, Mannerism			"A great example of the ""Mannerist"" movement in High Renaissance art. Mannerism makes itself known by elongated proportions, highly stylized poses, and lack of clear perspective."
+	Thomas Regnaudin and François Girardon	Apollo Attended by the Nymphs		1666-72	Baroque			
+	Nicolas Poussin	The Holy Family on the Steps		1648	Baroque, Classicism			
+	Nicolas Poussin	Et in Arcadia ego		1637-38	Classicism, Baroque			"This is the most famous of his two paintings with this title. The Latin prase means ""Even in Arcadia, there am I"". ""I"" refers to death, and ""Arcadia"" means a utopian or ideal land. It would thus be a memento mori."
+	Nicolas Poussin	A Dance to the Music of Time		1634-35	Classicism, Baroque			
+	Nicolas Poussin	The Crossing of the Red Sea		1633-34	Classicism			
+	Caspar David Friedrich	Monk by the Sea		1808-10	Romaticism			
+	Gerard van Honthorst	The Adoration of the Shepherds		1622	Caravaggisti, Baroque			
+	Frank Stella	Harran II		1967	Modernism, Color Field			
+	Kenneth Noland	Beginning		1958	Color Field			
+	Hans Hofmann	The Gate		1959-60	Modernism			
+	Frank Stella	La Vecchia dell'Orto		1986	Modernism, Abstract Expressionism			
+	Jacques-Louis David	The Oath of the Horatii		1784	Neoclassicism			
+	Antonio Canova	Psyche Revived by Cupid's Kiss		1787-93	Neoclassicism	Sculpture		
+	Antonio Canova	Perseus Holding Medusa's Head		c.1800	Neoclassicism	Sculpture		
+	François Gerard	Portrait of the Empress Joséphine		1801	Neoclassicism			
+	Paul Gauguin	Vision After the Sermon		1888	Post-Impressionism, Symbolism			
+	Fernand Khnopff	I Lock the Door Upon Myself		1891	Symbolism			
+	Munch	Anxiety		1894	Expressionism, Symbolism			
+	Paul Cézanne	Montagne Sainte-Victoire		1904	Post-Impressionism			
+	Edgar Degas	Dance Class		1871	Realism, Impressionism			
+	Edgar Degas	The Laundress		c. 1869	Realism, Impressionism			
+	André Derain	The Drying Sails		1905	Expressionism, Fauvism			
+	André Derain	The Dancer		1906	Expressionism, Fauvism			
+	André Derain	The Dance		1906	Expressionism, Fauvism			
+	Emil Nolde	The Dance Around the Golden Calf		1910	Expressionism			
+	André Derain	Three Figures Sitting on the Grass		1906	Expressionism, Fauvism			
+	Henri Matisse	Woman with a Hat		1905	Expressionism, Fauvism			The woman was Matisse's wife.
+	Franz Marc	Horse in a Landscape		1910	Expressionism			
+	Frida Kahlo	Self-Portrait with Thorn Necklace and Hummingbird		1940	Surrealism, Magical Realism			
+	Frida Kahlo	The Broken Column		1944	Surrealism, Magical Realism			
+	Georges Braque	Violin and Pitcher		1910	Cubism			
+	Paul Nash	Totes Meer	(Dead Sea)	1940-41	Surrealism			
+	Charles Demuth	Figure 5 in Gold		1928	American Modernism			
+	John Singer Sargent	Portrait of Madame X		1884	American Renaissance			The model was Virginie Amélie Avegno Gautreau. This painting created a social scandal when shown at the Paris Salon.
+	Salvador Dali	Soft Construction with Boiled Beans (Premonition of Civil War)		1936	Surrealism			
+	Salvador Dali	Swans Reflecting Elephants		1937	Surrealism			
+	Salvador Dali	The Elephants		1948	Surrealism			
+	Salvador Dali	Galatea of the Spheres		1952	Surrealism			
+	Salvador Dali	Crucifixion (Corpus Hypercubus)		1954	Surrealism			
+	Salvador Dalí	The Temptation of St. Anthony		1946	Surrealism			
+	Johannes Vermeer	A Girl Reading a Letter by an Open Window		c. 1657-59	Baroque, Dutch Golden Age			
+	Georges Braque	The Poruguese		1911	Cubism			
+	Theo van Doesburg	Study for Composition VIII (The Cow)		1918	Cubism, Neoplasticism			
+	Robert Delaunay	The Eiffel Tower		1911	Cubism, Abstract Art			
+	Robert Delaunay	Sun and Moon		1912	Abstract Art			
+	Wassily Kandinsky	The Garden of Love (Improvisation number 27)		1912	Abstract Art			
+	Jacob van Ruisdael	View of Haarlem		1670	Dutch Golden Age, Landscape			
+	Otto Dix	Portrait of the Journalist Sylvia von Harden		1926	New Objectivity (Neue Sachlichkeit), Post-Expressionism		Germany	
+	Karl Schmidt-Rottluff	Woman with a Bag		1915	Expressionism			
+	Richard Hamilton	Just What Is It That Makes Today's Home So Different, So Appealing?		1956	Pop Art			
+	Giorgio de Chirico	The Song of Love		1914	Surrealism			
+	Bruegel the Elder	The Fight Between Carnival and Lent		1559	Early Renaissance, Northern Renaissance			
+	Donatello	The Equestrian Statue of Gattamelata		1453	Early Renaissance	Bronze		
+	Emil Nolde	The Last Supper		1909	Expressionism	oil on canvas		
+	Emil Nolde	The Crucifixion		1912	Expressionism			
+	Emil Nolde	Pentecost		1909	Expressionism			
+	Pablo Picasso	Child Holding a Dove		1901	"""Blue Period"""			
+	Henri Matisse	Le bonheur de vivre	"""The Joy of Life"""	1906	Modernism, Expressionism			
+	Henri Matisse	The Green Line	or, The Green Stripe, Portrait of Madame Matisse	1905	Modernism, Fauvism			
+	Paul Klee	Twittering Machine		1922	Modern Art	Watercolor and ink; oil transfer on paper with gouache and ink on border		
+	Jean Auguste Dominique Ingres	The Source	"(or, ""The Spring"")"	1856	Neoclassicism			
+	Vincent van Gogh	Starry Night Over the Rhône		1888	Post-Impressionism	oil on canvas		
+	Vincent van Gogh	The Sower	(Sower at Sunset)	1888	Post-Impressionism	oil on canvas		
+	Vincent van Gogh	Paul Gauguin's Armchair		1888	Post-Impressionism			
+	Vincent van Gogh	Van Gogh's Chair		1888	Post-Impressionism			
+	Vincent van Gogh	The Olive Trees	(Olive Trees with the Alpilles in the Background)	1888	Post-Impressionism			
+	Vincent van Gogh	Road with Cypress and Star	(Country Road in Provence by Night)	1890	Post-Impressionism			
+	Vincent van Gogh	Sunflowers	(Vase with 12 Sunflowers)	1888	Post-Impressionism			
+	Banksy	Girl with Balloon		2004	Contemporary Art, Graffiti			
+	Banksy	Love is in the Air		2003	Contemporary Art, Graffiti			
+	Banksy	Maid in London		2006	Contemporary Art, Graffiti			
+	Norman Rockwell	Freedom from Fear	"(from the ""Four Freedoms"" series)"	1943	20th Century			
+	Norman Rockwell	Freedom of Speech	"(from the ""Four Freedoms"" series)"	1943	20th Century			
+	Norman Rockwell	Freedom of Worship	"(from the ""Four Freedoms"" series)"	1943	20th Century			
+	Norman Rockwell	Freedom from Want	"(from the ""Four Freedoms"" series)"	1943	20th Centry			
+	Norman Rockwell	Rosie the Riveter		1943	20th Century			
+	Norman Rockwell	The Problem We All Live With		1964	20th Century			"An iconic image of the civil rights movement in the United States, it depicts Ruby Bridges, a six-year-old African-American girl, on her way into an all-white public school in New Orleans on November 14, 1960 during the process of racial desegregation. She is escorted by four deputy U.S. marshals; the painting is framed such that the marshals' heads are cropped at the shoulders. On the wall behind her is written the racial slur ""nigger"" and the letters ""KKK""; a smashed tomato thrown at Bridges is also visible. The white crowd is not visible, as the viewer is looking at the scene from their point of view."
+	Pierro della Francesca	The Baptism of Christ		1450s	Early Renaissance			
+	Pierro della Francesca	Madonna del Parto	(Madonna of Parturition)	after 1457	Early Renaissance			"""Parturition"" is the act of giving birth."
+	Titian	Assumption of the Virgin		1516–1518	Renaissance			
+	J.M.W. Turner	Shipwreck		1805	Romanticism			
+	Raphael	Triumph of Galatea		c. 1514	High Renaissance	Fresco		
+	Antoine Watteau	Pilgrimage to Cythera	The Embarkation for Cythera	1717	Rococo			Pilgrimage to Cythera is an embellished repetition of Watteau's earlier painting, and exemplifies the frivolity and sensuousness of Rococo painting.
+	Jean-Honoré Fragonard	The Happy Accidents of the Swing		1767-1768	Rococo			
+	Jean-Honoré Fragonard	The Meeting	(Part of the Progress of Love series)	1771	Rococo			
+	François Boucher	Portrait of the Marquise de Pompadour		1756	Rococo			
+	Jean-Baptiste van Loo	The Triumph of Galatea		1720	Rococo			
+	John Constable	The Hay Wain		1821	Romanticism			
