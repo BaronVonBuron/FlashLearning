@@ -20,19 +20,14 @@
       <TextArea fx:id="ImageTextArea" editable="false" layoutX="150.0" layoutY="672.0" prefHeight="75.0" prefWidth="800.0" />
       <MenuBar fx:id="MenuBar" layoutX="14.0" layoutY="14.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Menu">
             <items>
               <MenuItem fx:id="menuFileImportOption" mnemonicParsing="false" onAction="#importOptionSelected" text="Import" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Deck">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="MenuSelectDeck" mnemonicParsing="false" onAction="#selectDeckOptionSelected" text="Select Deck" />
             </items>
           </Menu>
         </menus>

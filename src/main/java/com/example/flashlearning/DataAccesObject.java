@@ -18,6 +18,16 @@ public class DataAccesObject {
         System.out.println("Connected to Database");
     }
 
+    public void updateSomething(String s){
+        try {
+            Statement database = con.createStatement();
+            database.executeUpdate(s);
+            System.out.println("Statement: "+s+" Has been executed.");
+        } catch (SQLException e) {
+            System.out.println("Can't do requested statement: "+s+ " \nCode: "+ e.getErrorCode()+" Because: " + e.getMessage());
+        }
+    }
+
     public void createTable(String tableName, List<String> columns) {
         if (columns == null || columns.isEmpty()) {
             System.out.println("No columns provided for the table creation.");
@@ -44,16 +54,9 @@ public class DataAccesObject {
         }
     }
 
-    /*
-    List<String> columns = Arrays.asList(
-        "ID VARCHAR(255)",
-        "NoteType VARCHAR(255)",
-        "DeckName VARCHAR(255)",
-        // Add more columns as required
-    );
-    dataAccessObject.createTable("PresidentsFlashcards", columns);
-    */
-
-
+    public void addCard(Flashcard flashcard) {
+        String s = "INSERT INTO Flashcard (ID, Deck, Filepath,  Note) values ('"+flashcard.getID()+"', '"+flashcard.getDeckName()+"', '"+flashcard.getImagePath()+"', '"+flashcard.getNote()+"');";
+        updateSomething(s);
+    }
 
 }

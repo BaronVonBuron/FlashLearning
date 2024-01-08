@@ -6,32 +6,21 @@ import java.util.UUID;
 
 public class Flashcard {
 
-    private Image image;
-    private String category, answer;
-    private int difficulty;
-    private UUID uuid;
+    private String ID, category, deckName, imagePath, artist, title, empty7, year, movement, empty10, empty11, empty12, note;
 
-    public Flashcard(Image image, String category, String answer) {//image, arraylist<string>, ikke answer
-        this.image = image;
-        this.category = category;
-        this.answer = answer;
-        uuid = UUID.randomUUID();
+    public Flashcard(String ID, String deckName, String imagePath, String note) {
+        this.ID = ID;
+        this.deckName = deckName;
+        this.imagePath = imagePath;
+        this.note = note;
     }
 
-    public int getDifficulty() {
-        return difficulty;
+    public String getID() {
+        return ID;
     }
 
-    public void setDifficulty(int difficulty) {
-        this.difficulty = difficulty;
-    }
-
-    public Image getImage() {
-        return image;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getCategory() {
@@ -42,21 +31,110 @@ public class Flashcard {
         this.category = category;
     }
 
-    public String getAnswer() {
-        return answer;
+    public String getDeckName() {
+        return deckName;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public void setDeckName(String deckName) {
+        this.deckName = deckName;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getEmpty7() {
+        return empty7;
+    }
+
+    public void setEmpty7(String empty7) {
+        this.empty7 = empty7;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMovement() {
+        return movement;
+    }
+
+    public void setMovement(String movement) {
+        this.movement = movement;
+    }
+
+    public String getEmpty10() {
+        return empty10;
+    }
+
+    public void setEmpty10(String empty10) {
+        this.empty10 = empty10;
+    }
+
+    public String getEmpty11() {
+        return empty11;
+    }
+
+    public void setEmpty11(String empty11) {
+        this.empty11 = empty11;
+    }
+
+    public String getEmpty12() {
+        return empty12;
+    }
+
+    public void setEmpty12(String empty12) {
+        this.empty12 = empty12;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 
     @Override
     public String toString() {
         return "Flashcard{" +
-                "image=" + image +
+                "ID='" + ID + '\'' +
                 ", category='" + category + '\'' +
-                ", answer='" + answer + '\'' +
-                ", difficulty=" + difficulty +
+                ", deckName='" + deckName + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                ", artist='" + artist + '\'' +
+                ", title='" + title + '\'' +
+                ", empty7='" + empty7 + '\'' +
+                ", year='" + year + '\'' +
+                ", movement='" + movement + '\'' +
+                ", empty10='" + empty10 + '\'' +
+                ", empty11='" + empty11 + '\'' +
+                ", empty12='" + empty12 + '\'' +
+                ", note='" + note + '\'' +
                 '}';
     }
 }

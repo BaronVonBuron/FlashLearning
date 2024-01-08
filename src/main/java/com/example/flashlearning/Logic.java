@@ -3,6 +3,7 @@ package com.example.flashlearning;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -17,27 +18,35 @@ public class Logic {
     }
 
 
-    public void deckImported(File srcFile, File noteFile) {
-        try {
-            Scanner s = new Scanner(srcFile);
-            String imageName;
-            ArrayList<String> imageNames = new ArrayList<>();
-            while (s.hasNext()) {
-                String[] tokens = s.nextLine().split("\\t");
-                for (String token : tokens) {
-                    String pattern = "src=\"\"([^\"]*)\"\"";
-                    Pattern r = Pattern.compile(pattern);
-                    Matcher m = r.matcher(token);
 
-                    if (m.find()) {
-                        imageName = m.group(1);
-                        imageNames.add(imageName);
-                    }
-                }
-            }
-            System.out.println(imageNames);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+    public void addCard(String cleanDatum) {
+        String[] cardData = cleanDatum.split("\t");
+        String ID = cardData[0];
+        String deckName = cardData[2];
+        String filepath = cardData[3];
+        String note = " ";
+        for (int i = 4; i < cardData.length; i++) {
+            note = note.concat(cardData[i]);
+            note = note.concat(", ");
         }
+        dao.addCard(new Flashcard(ID, deckName, filepath, note));
+
     }
 }
+
+
+        /*
+        col. 1 = id
+        col. 2 = Category
+        col. 3 = Deckname
+        col. 4 = img name
+        col. 5 = Artist
+        col. 6 = title
+        col. 7 = n/a
+        col. 8 = year
+        col. 9 = movement
+        col. 10 = n/a
+        col. 11 = n/a
+        col. 12 = n/a
+        col. 13 = note/comment
+        */

@@ -13,10 +13,12 @@ import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class FlashLearningController {
 
     private final Logic logic = new Logic();
+    private final DataCleaner dataCleaner = new DataCleaner();
     public ImageView MainImageView;
     private Image bgImage;
     public AnchorPane LearningPane;
@@ -24,6 +26,7 @@ public class FlashLearningController {
     public TextArea ImageTextArea;
     public MenuBar MenuBar;
     public MenuItem menuFileImportOption;
+
 
 
     public void initialize(){
@@ -87,76 +90,43 @@ public class FlashLearningController {
     }
 
 
-    public void importOptionSelected() {
+    public void importOptionSelected() throws Exception {
         try {
-            logic.deckImported(srcFileChooser(), noteFileChooser());
+            srcFileChooser();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new Exception(e);
         }
     }
-    public File srcFileChooser(){
-        // Create a FileChooser
+    public void srcFileChooser(){
         FileChooser fileChooser = new FileChooser();
-
-        // Set the title for the FileChooser dialog
-        fileChooser.setTitle("Select src file from collection");
-
-        // Set extension filter for text files
+        fileChooser.setTitle("Select text file from collection");
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
         fileChooser.getExtensionFilters().add(extFilter);
         File initialDir = new File("src/main/resources");
         if (initialDir.exists()) {
             fileChooser.setInitialDirectory(initialDir);
         }
-
-        // Show open file dialog
         File srcFile = fileChooser.showOpenDialog(null);
 
-        // Check if a file was selected and is a txt file. Ib >:-C
         if (srcFile != null) {
-            if (!srcFile.getName().toLowerCase().endsWith(".txt")) {
+            if (!srcFile.getName().toLowerCase().endsWith(".txt")) {//  Ib >:-C
                 System.out.println("Error: Please select a .txt file.");
             } else {
                 System.out.println("File selected: " + srcFile.getAbsolutePath());
-                return srcFile;
+                ArrayList<String> cleanData = dataCleaner.extractData(srcFile.getPath());
+                if (!cleanData.isEmpty()) {
+                    for (String cleanDatum : cleanData) {
+                        logic.addCard(cleanDatum);
+                    }
+                }
             }
         } else {
             // No file was selected, handle this case as needed
             System.out.println("File selection cancelled.");
         }
-        return srcFile;
     }
 
-    public File noteFileChooser(){
-        // Create a FileChooser
-        FileChooser fileChooser = new FileChooser();
-
-        // Set the title for the FileChooser dialog
-        fileChooser.setTitle("Select note file from collection");
-
-        // Set extension filter for text files
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
-        fileChooser.getExtensionFilters().add(extFilter);
-        File initialDir = new File("src/main/resources");
-        if (initialDir.exists()) {
-            fileChooser.setInitialDirectory(initialDir);
-        }
-
-        // Show open file dialog
-        File noteFile = fileChooser.showOpenDialog(null);
-
-        // Check if a file was selected and is a txt file. Ib >:-C
-        if (noteFile != null) {
-            if (!noteFile.getName().toLowerCase().endsWith(".txt")) {
-                System.out.println("Error: Please select a .txt file.");
-            } else {
-                System.out.println("File selected: " + noteFile.getAbsolutePath());
-                return noteFile;
-            }
-        } else {
-            // No file was selected, handle this case as needed
-            System.out.println("File selection cancelled.");
-        }
-        return noteFile;
+    public void selectDeckOptionSelected(ActionEvent actionEvent) {
+        //TODO make pop up window with all the decks available from the DB.
     }
 }
