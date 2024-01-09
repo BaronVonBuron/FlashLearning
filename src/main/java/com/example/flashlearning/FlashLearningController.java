@@ -1,8 +1,6 @@
 package com.example.flashlearning;
 
-import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -115,9 +113,7 @@ public class FlashLearningController {
                 System.out.println("File selected: " + srcFile.getAbsolutePath());
                 ArrayList<String> cleanData = dataCleaner.extractData(srcFile.getPath());
                 if (!cleanData.isEmpty()) {
-                    for (String cleanDatum : cleanData) {
-                        logic.addCard(cleanDatum);
-                    }
+                    logic.addDeck(cleanData);
                 }
             }
         } else {
@@ -127,6 +123,7 @@ public class FlashLearningController {
     }
 
     public void selectDeckOptionSelected(ActionEvent actionEvent) {
+        logic.selectDeck();
         //TODO make pop up window with all the decks available from the DB.
     }
 }

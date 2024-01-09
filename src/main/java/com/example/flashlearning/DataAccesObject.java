@@ -1,6 +1,7 @@
 package com.example.flashlearning;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,35 +29,34 @@ public class DataAccesObject {
         }
     }
 
-    public void createTable(String tableName, List<String> columns) {
-        if (columns == null || columns.isEmpty()) {
-            System.out.println("No columns provided for the table creation.");
-            return;
-        }
-
-        StringBuilder sqlBuilder = new StringBuilder("CREATE TABLE ");
-        sqlBuilder.append(tableName).append(" (");
-
-        for (int i = 0; i < columns.size(); i++) {
-            sqlBuilder.append(columns.get(i));
-            if (i < columns.size() - 1) {
-                sqlBuilder.append(", ");
-            }
-        }
-
-        sqlBuilder.append(");");
-
-        try (Statement stmt = con.createStatement()) {
-            stmt.execute(sqlBuilder.toString());
-            System.out.println("Table " + tableName + " created successfully");
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public void addDeck(Deck deck){
+        String s1 = "INSERT INTO Deck (Name) VALUES ('"+deck.getName()+"');";
+        updateSomething(s1);
+        for (Flashcard flashcard : deck.getFlashcards()) {
+            addCard(flashcard);
         }
     }
+
 
     public void addCard(Flashcard flashcard) {
         String s = "INSERT INTO Flashcard (ID, Deck, Filepath,  Note) values ('"+flashcard.getID()+"', '"+flashcard.getDeckName()+"', '"+flashcard.getImagePath()+"', '"+flashcard.getNote()+"');";
         updateSomething(s);
     }
 
+    public ArrayList<Deck> returnDecks() {
+        ArrayList<Deck> decks = new ArrayList<>();
+        String s = "SELECT * FROM Flashcard";
+        try {
+            Statement database = con.createStatement();
+            ResultSet rs = database.executeQuery(s);
+            while (rs.next()){
+                String name = rs.getString("Deck");
+                decks.add(new Deck(name));
+            }
+            System.out.println("Statement: "+s+" Has been executed.");
+        } catch (SQLException e) {
+            System.out.println("Can't do requested statement: "+s+ " Because: "+ e.getErrorCode() + e.getMessage());
+        }
+        return decks;
+    }
 }
