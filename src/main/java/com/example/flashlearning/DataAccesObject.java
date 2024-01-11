@@ -2,7 +2,6 @@ package com.example.flashlearning;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class DataAccesObject {
@@ -39,18 +38,32 @@ public class DataAccesObject {
 
 
     public void addCard(Flashcard flashcard) {
-        String s = "INSERT INTO Flashcard (ID, Deck, Filepath,  Note) values ('"+flashcard.getID()+"', '"+flashcard.getDeckName()+"', '"+flashcard.getImagePath()+"', '"+flashcard.getNote()+"');";
-        updateSomething(s);
+        // SQL statement with placeholders for values
+        String sql = "INSERT INTO Flashcard (ID, Deck, Filepath, Note, ImageData) VALUES (?, ?, ?, ?, ?);";
+        try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+            // Set parameters
+            pstmt.setString(1, flashcard.getID());
+            pstmt.setString(2, flashcard.getDeckName());
+            pstmt.setString(3, flashcard.getImagePath());
+            pstmt.setString(4, flashcard.getNote());
+            pstmt.setBytes(5, flashcard.getImageData()); // Set image data as byte array
+
+            // Execute update
+            pstmt.executeUpdate();
+            System.out.println("Card added: " + flashcard.getID());
+        } catch (SQLException e) {
+            System.err.println("Error adding card: " + e.getMessage());
+        }
     }
 
     public ArrayList<Deck> returnDecks() {
         ArrayList<Deck> decks = new ArrayList<>();
-        String s = "SELECT * FROM Flashcard";
+        String s = "SELECT * FROM Deck";
         try {
             Statement database = con.createStatement();
             ResultSet rs = database.executeQuery(s);
             while (rs.next()){
-                String name = rs.getString("Deck");
+                String name = rs.getString("Name");
                 decks.add(new Deck(name));
             }
             System.out.println("Statement: "+s+" Has been executed.");
@@ -58,5 +71,28 @@ public class DataAccesObject {
             System.out.println("Can't do requested statement: "+s+ " Because: "+ e.getErrorCode() + e.getMessage());
         }
         return decks;
+    }
+
+    public ArrayList<Flashcard> returnCardsInDeck(String name) {
+        ArrayList<Flashcard> cards = new ArrayList<>();
+        String sql = "SELECT * FROM Flashcard WHERE Deck = ?;";
+        try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+            pstmt.setString(1, name);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    String ID = rs.getString("ID");
+                    String deck = rs.getString("Deck");
+                    String filepath = rs.getString("Filepath");
+                    String note = rs.getString("Note");
+                    byte[] imageData = rs.getBytes("ImageData"); // Fetch image data as byte array
+
+                    cards.add(new Flashcard(ID, deck, filepath, note, imageData));
+                }
+                System.out.println("Cards fetched for deck: " + name);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error fetching cards for deck: " + name + " - " + e.getMessage());
+        }
+        return cards;
     }
 }

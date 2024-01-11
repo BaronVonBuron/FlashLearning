@@ -1,20 +1,20 @@
 package com.example.flashlearning;
 
-import javafx.scene.image.Image;
-
-import java.util.UUID;
-
 public class Flashcard {
 
-    private String ID, category, deckName, imagePath, artist, title, empty7, year, movement, empty10, empty11, empty12, note;
+    private String ID, category, deckName, imagePath, artist, title, year, movement, note;
+    private byte[] imageData; // Field to store the image data as a byte array
 
-    public Flashcard(String ID, String deckName, String imagePath, String note) {
+    // Constructor with imageData
+    public Flashcard(String ID, String deckName, String imagePath, String note, byte[] imageData) {
         this.ID = ID;
         this.deckName = deckName;
         this.imagePath = imagePath;
         this.note = note;
+        this.imageData = imageData; // Assigning the imageData
     }
 
+    // Getters and setters for the fields
     public String getID() {
         return ID;
     }
@@ -63,14 +63,6 @@ public class Flashcard {
         this.title = title;
     }
 
-    public String getEmpty7() {
-        return empty7;
-    }
-
-    public void setEmpty7(String empty7) {
-        this.empty7 = empty7;
-    }
-
     public String getYear() {
         return year;
     }
@@ -87,36 +79,22 @@ public class Flashcard {
         this.movement = movement;
     }
 
-    public String getEmpty10() {
-        return empty10;
-    }
-
-    public void setEmpty10(String empty10) {
-        this.empty10 = empty10;
-    }
-
-    public String getEmpty11() {
-        return empty11;
-    }
-
-    public void setEmpty11(String empty11) {
-        this.empty11 = empty11;
-    }
-
-    public String getEmpty12() {
-        return empty12;
-    }
-
-    public void setEmpty12(String empty12) {
-        this.empty12 = empty12;
-    }
-
     public String getNote() {
         return note;
     }
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    // New getter for imageData
+    public byte[] getImageData() {
+        return imageData;
+    }
+
+    // New setter for imageData
+    public void setImageData(byte[] imageData) {
+        this.imageData = imageData;
     }
 
     @Override
@@ -128,12 +106,8 @@ public class Flashcard {
                 ", imagePath='" + imagePath + '\'' +
                 ", artist='" + artist + '\'' +
                 ", title='" + title + '\'' +
-                ", empty7='" + empty7 + '\'' +
                 ", year='" + year + '\'' +
                 ", movement='" + movement + '\'' +
-                ", empty10='" + empty10 + '\'' +
-                ", empty11='" + empty11 + '\'' +
-                ", empty12='" + empty12 + '\'' +
                 ", note='" + note + '\'' +
                 '}';
     }

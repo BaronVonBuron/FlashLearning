@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Deck {
 
     private String name;
-    private int numberOfCards;
     private ArrayList<Flashcard> flashcards = new ArrayList<>();
+    private int numberOfCards;
 
     public Deck(String name) {
         this.name = name;
@@ -14,6 +14,7 @@ public class Deck {
 
     public void setFlashcards(ArrayList<Flashcard> fc){
         this.flashcards = fc;
+        setNumberOfCards();
     }
 
     public ArrayList<Flashcard> getFlashcards() {
@@ -29,23 +30,22 @@ public class Deck {
     }
 
     public int getNumberOfCards() {
-        return numberOfCards;
+        if (flashcards.isEmpty()){
+            return 0;
+        }else return flashcards.size();
     }
 
-    public void setNumberOfCards(int numberOfCards) {
-        this.numberOfCards = numberOfCards;
+    public void setNumberOfCards() {
+        this.numberOfCards = flashcards.size();
     }
 
-    public void addCard(String id, String deckName, String filepath, String note) {
-        this.flashcards.add(new Flashcard(id, deckName, filepath, note));
+    public void addCard(String id, String deckName, String imagePath, String note, byte[] imageData) {
+        this.flashcards.add(new Flashcard(id, deckName, imagePath, note, imageData));
     }
 
     @Override
     public String toString() {
-        return "Deck{" +
-                "name='" + name + '\'' +
-                ", numberOfCards=" + numberOfCards +
-                '}';
+        return name+" - Cards: "+numberOfCards;
     }
 
 
