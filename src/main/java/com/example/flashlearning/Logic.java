@@ -55,19 +55,17 @@ public class Logic {
         dao.addDeck(deck);
     }*/
 
-    public void addDeck(HashMap<String, String> imageDetails, HashMap<String, byte[]> imageData, String directoryPath) {
-        // Process each entry in the imageDetails HashMap
+    public void addDeck(HashMap<String, String> imageDetails, HashMap<String, byte[]> imageData, String directoryPath, String deckName) {
+        Deck deck = new Deck(deckName);
         for (Map.Entry<String, String> entry : imageDetails.entrySet()) {
             String imageFileName = entry.getKey();
             String cardData = entry.getValue();
             String[] cd = cardData.split("\t");
 
-            if (cd.length < 4) continue;
-
-            String ID = cd[0];
-            String deckName = cd[2];
-            String filepath = directoryPath + File.separator + imageFileName;
-            StringBuilder note = new StringBuilder();
+            if (cd.length < 4) continue;//hvis der er mindst 4 kolonner i dataen til billedet, så fortsæt.
+            String ID = cd[0];//billede ID
+            String filepath = directoryPath + File.separator + imageFileName;//TODO denne er unødvendig hvis billeder uploader fint til DB.
+            StringBuilder note = new StringBuilder();//bygger de adskilte værdier sammen igen.
 
             for (int i = 4; i < cd.length; i++) {
                 note.append(cd[i]);
@@ -75,16 +73,10 @@ public class Logic {
                     note.append(", ");
                 }
             }
-
             byte[] imageBytes = imageData.get(imageFileName);
-
-            // Assuming Deck is a class that you can instantiate and add cards to
-            Deck deck = new Deck(deckName);
             deck.addCard(ID, deckName, filepath, note.toString(), imageBytes);
-
-            // Assuming dao is an object through which you add the deck to the database
-            dao.addDeck(deck);
         }
+        dao.addDeck(deck);
     }
 
     private byte[] readImageAsByteArray(String filepath) {

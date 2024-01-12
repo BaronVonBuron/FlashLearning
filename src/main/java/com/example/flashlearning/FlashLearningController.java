@@ -10,7 +10,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
-
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -33,7 +35,7 @@ public class FlashLearningController {
 
 
 
-    public void initialize(){
+    public void initialize() throws IOException {
         backgroundStartup();
         imageViewShowImage();
     }
@@ -44,9 +46,12 @@ public class FlashLearningController {
         this.LearningPane.setBackground(new Background(bg));
     }
 
-    private void imageViewShowImage() {
+    private void imageViewShowImage() throws IOException {
         if (flashcardIsShowing && selectedDeck != null) {
-            Image img = new Image(getClass().getResourceAsStream("/greatartists/"+selectedDeck.getFlashcards().getFirst().getImagePath()));
+
+
+
+            Image img = ImageConverter.byteArrayToFXImage(selectedDeck.getFlashcards().getFirst().getImageData());
             if (img != null) {
                 MainImageView.setImage(img);
                 MainImageView.setFitWidth(800);
@@ -65,6 +70,8 @@ public class FlashLearningController {
             }
         }
     }
+
+
 
 
     public void showAnswerButtonPressed(ActionEvent actionEvent) {
@@ -98,7 +105,6 @@ public class FlashLearningController {
 
     public void importOptionSelected() throws Exception {
         try {
-            //srcFileChooser();
             srcFolderChooser();
         } catch (Exception e) {
             throw new Exception(e);
@@ -109,44 +115,43 @@ public class FlashLearningController {
     public void srcFolderChooser() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setTitle("Select Folder");
-        File selectedDir = directoryChooser.showDialog(null);
+        //File initialDirectory = new File("src/main/java/resources/");//åbner resources mappen først.
+        //directoryChooser.setInitialDirectory(initialDirectory);//TODO giver fejl: java.lang.IllegalArgumentException: Folder parameter must be a valid folder
+        File selectedDir = directoryChooser.showDialog(null);//directory chooser åbner en hel mappe.
 
         if (selectedDir != null) {
             File[] filesInDir = selectedDir.listFiles();
-            HashMap<String, String> imageDetails = new HashMap<>();
-            HashMap<String, byte[]> imageData = new HashMap<>(); // To store image data as byte arrays
-
-            if (filesInDir != null) {
-                for (File file : filesInDir) {
-                    if (file.isFile() && file.getName().toLowerCase().endsWith(".txt")) {
-                        // Process .txt file
-                        ArrayList<String> cleanedData = dataCleaner.extractData(file.getPath());
-                        for (String line : cleanedData) {
-                            String[] columns = line.split("\t");
-                            if (columns.length > 3) {
-                                String imageName = columns[3];
-                                imageDetails.put(imageName, line);
+            HashMap<String, String> imageDetails = new HashMap<>();//hashmap til at kæde billedstier sammen med billeddata.
+            HashMap<String, byte[]> imageData = new HashMap<>(); //hashmap til at kæde billedstier sammen med billeder i bytearray.
+            String deckName = "";
+            if (filesInDir != null) {//ser om der er filer i mappen
+                for (File file : filesInDir) {//kører igennem hver fil i mappen
+                    if (file.isFile() && file.getName().toLowerCase().endsWith(".txt")) {//tjekker om den nuværende fil i løkken er en txt fil.
+                        ArrayList<String> cleanedData = dataCleaner.extractData(file.getPath());//kører filen igennem datacleaner class
+                        for (String line : cleanedData) {//kører hver linje igennem i txt filen
+                            String[] columns = line.split("\t");//splitter hver linje ind i kolonner, adskilt med tab.
+                            if (columns.length > 3) {//random check der bare sørger for at den ikke kan lave en nullpointer, skulle der være en halv linje
+                                String imageName = columns[3];//laver en streng fra 4. kolonne, der indeholder billedenavnet.
+                                imageDetails.put(imageName, line);//kæder billedenavnet sammen med resten af linjen i et hashmap.
+                                deckName = columns[2];//Sætter navnet på deck'et.
                             }
                         }
                     }
                 }
 
-                for (File file : filesInDir) {
-                    if (file.isFile() && isImageFile(file.getName())) {
-                        if (imageDetails.containsKey(file.getName())) {
-                            // Read image file as byte array
+                for (File file : filesInDir) {//looper alle filerne igennem
+                    if (file.isFile() && isImageFile(file.getName())) {//ser om filen er en billedefil.
+                        if (imageDetails.containsKey(file.getName())) {//ser om det hashmap der blev lavet før, indeholder en nøgle der passer med navnet på billedefilen.
                             try {
-                                byte[] fileContent = Files.readAllBytes(file.toPath());
-                                imageData.put(file.getName(), fileContent);
+                                byte[] fileContent = Files.readAllBytes(file.toPath());//laver billedefilen om til et bytearray
+                                imageData.put(file.getName(), fileContent);//kæder bytearray sammen med billedenavn.
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
                         }
                     }
                 }
-
-                // Now, call the addDeck method
-                logic.addDeck(imageDetails, imageData, selectedDir.getAbsolutePath());
+                logic.addDeck(imageDetails, imageData, selectedDir.getAbsolutePath(), deckName);//caller addDeck i logic.
             }
         } else {
             System.out.println("Folder selection cancelled.");
@@ -160,7 +165,7 @@ public class FlashLearningController {
                 || lowerCaseFileName.endsWith(".gif");
     }
 
-    public void selectDeckOptionSelected(ActionEvent actionEvent) {
+    public void selectDeckOptionSelected(ActionEvent actionEvent) throws IOException {
         logic.selectDeck();
         this.selectedDeck = logic.getSelectedDeck();
         if (!flashcardIsShowing){
