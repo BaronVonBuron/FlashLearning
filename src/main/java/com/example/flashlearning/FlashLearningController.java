@@ -22,7 +22,6 @@ import java.util.HashMap;
 public class FlashLearningController {
 
     private final Logic logic = new Logic();
-    private final DataCleaner dataCleaner = new DataCleaner();
     private boolean flashcardIsShowing;
     private Deck selectedDeck;
     public ImageView MainImageView;
@@ -48,9 +47,6 @@ public class FlashLearningController {
 
     private void imageViewShowImage() throws IOException {
         if (flashcardIsShowing && selectedDeck != null) {
-
-
-
             Image img = ImageConverter.byteArrayToFXImage(selectedDeck.getFlashcards().getFirst().getImageData());
             if (img != null) {
                 MainImageView.setImage(img);
@@ -105,65 +101,16 @@ public class FlashLearningController {
 
     public void importOptionSelected() throws Exception {
         try {
-            srcFolderChooser();
+            logic.importCollection();
         } catch (Exception e) {
             throw new Exception(e);
         }
     }
 
 
-    public void srcFolderChooser() {
-        DirectoryChooser directoryChooser = new DirectoryChooser();
-        directoryChooser.setTitle("Select Folder");
-        //File initialDirectory = new File("src/main/java/resources/");//åbner resources mappen først.
-        //directoryChooser.setInitialDirectory(initialDirectory);//TODO giver fejl: java.lang.IllegalArgumentException: Folder parameter must be a valid folder
-        File selectedDir = directoryChooser.showDialog(null);//directory chooser åbner en hel mappe.
 
-        if (selectedDir != null) {
-            File[] filesInDir = selectedDir.listFiles();
-            HashMap<String, String> imageDetails = new HashMap<>();//hashmap til at kæde billedstier sammen med billeddata.
-            HashMap<String, byte[]> imageData = new HashMap<>(); //hashmap til at kæde billedstier sammen med billeder i bytearray.
-            String deckName = "";
-            if (filesInDir != null) {//ser om der er filer i mappen
-                for (File file : filesInDir) {//kører igennem hver fil i mappen
-                    if (file.isFile() && file.getName().toLowerCase().endsWith(".txt")) {//tjekker om den nuværende fil i løkken er en txt fil.
-                        ArrayList<String> cleanedData = dataCleaner.extractData(file.getPath());//kører filen igennem datacleaner class
-                        for (String line : cleanedData) {//kører hver linje igennem i txt filen
-                            String[] columns = line.split("\t");//splitter hver linje ind i kolonner, adskilt med tab.
-                            if (columns.length > 3) {//random check der bare sørger for at den ikke kan lave en nullpointer, skulle der være en halv linje
-                                String imageName = columns[3];//laver en streng fra 4. kolonne, der indeholder billedenavnet.
-                                imageDetails.put(imageName, line);//kæder billedenavnet sammen med resten af linjen i et hashmap.
-                                deckName = columns[2];//Sætter navnet på deck'et.
-                            }
-                        }
-                    }
-                }
 
-                for (File file : filesInDir) {//looper alle filerne igennem
-                    if (file.isFile() && isImageFile(file.getName())) {//ser om filen er en billedefil.
-                        if (imageDetails.containsKey(file.getName())) {//ser om det hashmap der blev lavet før, indeholder en nøgle der passer med navnet på billedefilen.
-                            try {
-                                byte[] fileContent = Files.readAllBytes(file.toPath());//laver billedefilen om til et bytearray
-                                imageData.put(file.getName(), fileContent);//kæder bytearray sammen med billedenavn.
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                }
-                logic.addDeck(imageDetails, imageData, selectedDir.getAbsolutePath(), deckName);//caller addDeck i logic.
-            }
-        } else {
-            System.out.println("Folder selection cancelled.");
-        }
-    }
 
-    private boolean isImageFile(String fileName) {
-        String lowerCaseFileName = fileName.toLowerCase();
-        return lowerCaseFileName.endsWith(".jpg") || lowerCaseFileName.endsWith(".png")
-                || lowerCaseFileName.endsWith(".jpeg") || lowerCaseFileName.endsWith(".bmp")
-                || lowerCaseFileName.endsWith(".gif");
-    }
 
     public void selectDeckOptionSelected(ActionEvent actionEvent) throws IOException {
         logic.selectDeck();
@@ -172,5 +119,13 @@ public class FlashLearningController {
             flashcardIsShowing = true;
         }
         imageViewShowImage();
+    }
+
+    public void selectUserSelected(ActionEvent actionEvent) {
+        logic.selectUser();
+    }
+
+    public void editUserSelected(ActionEvent actionEvent) {
+        logic.editUser();
     }
 }

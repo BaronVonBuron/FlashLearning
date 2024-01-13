@@ -30,6 +30,12 @@
               <MenuItem fx:id="MenuSelectDeck" mnemonicParsing="false" onAction="#selectDeckOptionSelected" text="Select Deck" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="User">
+              <items>
+                <MenuItem fx:id="SelectUserMenu" mnemonicParsing="false" onAction="#selectUserSelected" text="Select User" />
+                  <MenuItem fx:id="EditUserMenu" mnemonicParsing="false" onAction="#editUserSelected" text="Edit User" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </children>

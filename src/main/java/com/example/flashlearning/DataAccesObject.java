@@ -39,14 +39,15 @@ public class DataAccesObject {
 
     public void addCard(Flashcard flashcard) {
         // SQL statement with placeholders for values
-        String sql = "INSERT INTO Flashcard (ID, Deck, Filepath, Note, ImageData) VALUES (?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO Flashcard (ID, Deck, Question, Answer, BonusInfo, ImageData) VALUES (?, ?, ?, ?, ?, ?);";
         try (PreparedStatement pstmt = con.prepareStatement(sql)) {
             // Set parameters
             pstmt.setString(1, flashcard.getID());
-            pstmt.setString(2, flashcard.getDeckName());
-            pstmt.setString(3, flashcard.getImagePath());
-            pstmt.setString(4, flashcard.getNote());
-            pstmt.setBytes(5, flashcard.getImageData()); // Set image data as byte array
+            pstmt.setString(2, flashcard.getDeck());
+            pstmt.setString(3, flashcard.getQuestion());
+            pstmt.setString(4, flashcard.getAnswer());
+            pstmt.setString(5, flashcard.getBonusinfo());
+            pstmt.setBytes(6, flashcard.getImageData()); // Set image data as byte array
 
             // Execute update
             pstmt.executeUpdate();
@@ -82,11 +83,12 @@ public class DataAccesObject {
                 while (rs.next()) {
                     String ID = rs.getString("ID");
                     String deck = rs.getString("Deck");
-                    String filepath = rs.getString("Filepath");
-                    String note = rs.getString("Note");
+                    String question = rs.getString("Question");
+                    String answer = rs.getString("Answer");
+                    String bonusInfo = rs.getString("BonusInfo");
                     byte[] imageData = rs.getBytes("ImageData"); // Fetch image data as byte array
 
-                    cards.add(new Flashcard(ID, deck, filepath, note, imageData));
+                    cards.add(new Flashcard(ID, deck, question, answer, bonusInfo, imageData));
                 }
                 System.out.println("Cards fetched for deck: " + name);
             }

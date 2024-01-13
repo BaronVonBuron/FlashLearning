@@ -39,8 +39,8 @@ public class Deck {
         this.numberOfCards = flashcards.size();
     }
 
-    public void addCard(String id, String deckName, String imagePath, String note, byte[] imageData) {
-        this.flashcards.add(new Flashcard(id, deckName, imagePath, note, imageData));
+    public void addCard(String id, String deckName, String question, String answer, String bonusInfo, byte[] imageData) {
+        this.flashcards.add(new Flashcard(id, deckName, question, answer, bonusInfo, imageData));
     }
 
     @Override

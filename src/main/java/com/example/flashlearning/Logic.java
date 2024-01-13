@@ -37,48 +37,6 @@ public class Logic {
 
 
 
-    /*public void addDeck(ArrayList<String> cardData){
-        String[] cards = cardData.getFirst().split("\t");
-        Deck deck = new Deck(cards[2]);
-        for (String cardDatum : cardData) {
-            String[] cd = cardDatum.split("\t");
-            String ID = cd[0];
-            String deckName = cd[2];
-            String filepath = cd[3];
-            String note = " ";
-            for (int i = 4; i < cards.length; i++) {
-                note = note.concat(cd[i]);
-                note = note.concat(", ");
-            }
-            deck.addCard(ID, deckName, filepath, note);
-        }
-        dao.addDeck(deck);
-    }*/
-
-    public void addDeck(HashMap<String, String> imageDetails, HashMap<String, byte[]> imageData, String directoryPath, String deckName) {
-        Deck deck = new Deck(deckName);
-        for (Map.Entry<String, String> entry : imageDetails.entrySet()) {
-            String imageFileName = entry.getKey();
-            String cardData = entry.getValue();
-            String[] cd = cardData.split("\t");
-
-            if (cd.length < 4) continue;//hvis der er mindst 4 kolonner i dataen til billedet, så fortsæt.
-            String ID = cd[0];//billede ID
-            String filepath = directoryPath + File.separator + imageFileName;//TODO denne er unødvendig hvis billeder uploader fint til DB.
-            StringBuilder note = new StringBuilder();//bygger de adskilte værdier sammen igen.
-
-            for (int i = 4; i < cd.length; i++) {
-                note.append(cd[i]);
-                if (i < cd.length - 1) {
-                    note.append(", ");
-                }
-            }
-            byte[] imageBytes = imageData.get(imageFileName);
-            deck.addCard(ID, deckName, filepath, note.toString(), imageBytes);
-        }
-        dao.addDeck(deck);
-    }
-
     private byte[] readImageAsByteArray(String filepath) {
         try {
             return Files.readAllBytes(new File(filepath).toPath());
@@ -88,29 +46,11 @@ public class Logic {
         }
     }
 
-    public void addCard(String cleanDatum, byte[] imageData) {
-        String[] cardData = cleanDatum.split("\t");
-        String ID = cardData[0];
-        String deckName = cardData[2];
-        String filepath = cardData[3];
-        StringBuilder note = new StringBuilder(" ");
-
-        for (int i = 4; i < cardData.length; i++) {
-            note.append(cardData[i]);
-            if (i < cardData.length - 1) {
-                note.append(", ");
-            }
-        }
-
-        // Passing the image byte array to the Flashcard constructor
-        dao.addCard(new Flashcard(ID, deckName, filepath, note.toString(), imageData));
-    }
 
     public void selectDeck() {
         Stage window = new Stage();
         window.setTitle("Select Deck");
         ListView<Deck> deckListView = new ListView<>();
-        ObservableList<Deck> observableDecks = FXCollections.observableList(decks);
         deckListView.getItems().addAll(decks); // TODO get the actual decks from list of decks.
 
         Button okButton = new Button("OK");
@@ -137,5 +77,21 @@ public class Logic {
 
     public Deck getSelectedDeck() {
         return selectedDeck;
+    }
+
+    public void importCollection() {
+        ImportCollection ic = new ImportCollection();
+        ic.srcFolderChooser();
+        dao.addDeck(ic.getDeck());
+        update();
+    }
+
+    public void selectUser() {
+        //TODO lav user vindue, med de forskellige brugere.
+        //TODO lav field med valgte bruger, som controller skal hente. Ved opstart af programmet skal den sidste valgte bruger stadig være valgt.
+    }
+
+    public void editUser() {
+        //TODO lav vindue til redigering af brugere/sletning af brugere.
     }
 }

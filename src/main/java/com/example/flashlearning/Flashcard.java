@@ -2,19 +2,18 @@ package com.example.flashlearning;
 
 public class Flashcard {
 
-    private String ID, category, deckName, imagePath, artist, title, year, movement, note;
+    private String ID, deck, question, answer, bonusinfo;
     private byte[] imageData; // Field to store the image data as a byte array
 
-    // Constructor with imageData
-    public Flashcard(String ID, String deckName, String imagePath, String note, byte[] imageData) {
+    public Flashcard(String ID, String deck, String question, String answer, String bonusinfo, byte[] imageData) {
         this.ID = ID;
-        this.deckName = deckName;
-        this.imagePath = imagePath;
-        this.note = note;
-        this.imageData = imageData; // Assigning the imageData
+        this.deck = deck;
+        this.question = question;
+        this.answer = answer;
+        this.bonusinfo = bonusinfo;
+        this.imageData = imageData;
     }
 
-    // Getters and setters for the fields
     public String getID() {
         return ID;
     }
@@ -23,76 +22,42 @@ public class Flashcard {
         this.ID = ID;
     }
 
-    public String getCategory() {
-        return category;
+    public String getDeck() {
+        return deck;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setDeck(String deck) {
+        this.deck = deck;
     }
 
-    public String getDeckName() {
-        return deckName;
+    public String getQuestion() {
+        return question;
     }
 
-    public void setDeckName(String deckName) {
-        this.deckName = deckName;
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
-    public String getArtist() {
-        return artist;
+    public String getBonusinfo() {
+        return bonusinfo;
     }
 
-    public void setArtist(String artist) {
-        this.artist = artist;
+    public void setBonusinfo(String bonusinfo) {
+        this.bonusinfo = bonusinfo;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getYear() {
-        return year;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
-    }
-
-    public String getMovement() {
-        return movement;
-    }
-
-    public void setMovement(String movement) {
-        this.movement = movement;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    // New getter for imageData
     public byte[] getImageData() {
         return imageData;
     }
 
-    // New setter for imageData
     public void setImageData(byte[] imageData) {
         this.imageData = imageData;
     }
@@ -101,14 +66,10 @@ public class Flashcard {
     public String toString() {
         return "Flashcard{" +
                 "ID='" + ID + '\'' +
-                ", category='" + category + '\'' +
-                ", deckName='" + deckName + '\'' +
-                ", imagePath='" + imagePath + '\'' +
-                ", artist='" + artist + '\'' +
-                ", title='" + title + '\'' +
-                ", year='" + year + '\'' +
-                ", movement='" + movement + '\'' +
-                ", note='" + note + '\'' +
+                ", deck='" + deck + '\'' +
+                ", question='" + question + '\'' +
+                ", answer='" + answer + '\'' +
+                ", bonusinfo='" + bonusinfo + '\'' +
                 '}';
     }
 }
