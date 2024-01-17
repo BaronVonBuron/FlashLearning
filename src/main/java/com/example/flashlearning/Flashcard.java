@@ -1,8 +1,11 @@
 package com.example.flashlearning;
 
+import java.sql.Timestamp;
+
 public class Flashcard {
 
     private String ID, deck, question, answer, bonusinfo;
+    private Timestamp timestamp;
     private byte[] imageData; // Field to store the image data as a byte array
 
     public Flashcard(String ID, String deck, String question, String answer, String bonusinfo, byte[] imageData) {
@@ -12,6 +15,14 @@ public class Flashcard {
         this.answer = answer;
         this.bonusinfo = bonusinfo;
         this.imageData = imageData;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getID() {

@@ -41,6 +41,7 @@ public class Deck {
 
     public void addCard(String id, String deckName, String question, String answer, String bonusInfo, byte[] imageData) {
         this.flashcards.add(new Flashcard(id, deckName, question, answer, bonusInfo, imageData));
+        setNumberOfCards();
     }
 
     @Override

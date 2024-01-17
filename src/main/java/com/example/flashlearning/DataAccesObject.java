@@ -1,7 +1,11 @@
 package com.example.flashlearning;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 public class DataAccesObject {
@@ -54,6 +58,7 @@ public class DataAccesObject {
             System.out.println("Card added: " + flashcard.getID());
         } catch (SQLException e) {
             System.err.println("Error adding card: " + e.getMessage());
+            logFailedFlashcard(flashcard, e.getMessage());
         }
     }
 
@@ -96,5 +101,89 @@ public class DataAccesObject {
             System.err.println("Error fetching cards for deck: " + name + " - " + e.getMessage());
         }
         return cards;
+    }
+
+    public List<User> returnUsers() {
+        List<User> users = new ArrayList<>();
+        String s = "SELECT * FROM [User]";
+        try {
+            Statement database = con.createStatement();
+            ResultSet rs = database.executeQuery(s);
+            while (rs.next()){
+                String name = rs.getString("Name");
+                users.add(new User(name));
+            }
+            System.out.println("Statement: "+s+" Has been executed.");
+        } catch (SQLException e) {
+            System.out.println("Can't do requested statement: "+s+ " Because: "+ e.getErrorCode() + e.getMessage());
+        }
+        return users;
+    }
+
+    public void logFailedFlashcard(Flashcard flashcard, String errorMessage) {
+        String logFileName = "failed_flashcards_log.txt";
+        try (FileWriter writer = new FileWriter(logFileName, true)) {
+            writer.write("Failed to add Flashcard: " + flashcard.getID() + "\n");
+            writer.write("Error Message: " + errorMessage + "\n");
+            writer.write("-------------------------------------------------\n");
+        } catch (IOException e) {
+            System.err.println("Error writing to log file: " + e.getMessage());
+        }
+    }
+
+    public void updateUserAnswer(String updateSQL, String insertSQL, String checkRowSQL) {
+        try {
+            // Check if the row exists in the database
+            PreparedStatement checkRowStmt = con.prepareStatement(checkRowSQL);
+            ResultSet resultSet = checkRowStmt.executeQuery();
+
+            if (resultSet.next()) {
+                // The row exists, so execute the update statement
+                PreparedStatement updateStmt = con.prepareStatement(updateSQL);
+                updateStmt.executeUpdate();
+                System.out.println(updateStmt);
+            } else {
+                // The row does not exist, so execute the insert statement
+                PreparedStatement insertStmt = con.prepareStatement(insertSQL);
+                insertStmt.executeUpdate();
+                System.out.println(insertStmt);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e);
+        }
+    }
+
+    public List<String> returnIrrelevantCards(String username) {
+        List<String> irrelevantCardIds = new ArrayList<>();
+        String s = "SELECT * FROM UserAnswer WHERE user_name = '"+username+"' AND Irrelevant = 'true'";
+        try {
+            Statement database = con.createStatement();
+            ResultSet rs = database.executeQuery(s);
+            while (rs.next()){
+                String name = rs.getString("flashcard_id");
+                irrelevantCardIds.add(name);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return irrelevantCardIds;
+    }
+
+    public HashMap<String, Timestamp> returnTimestampsForCards(String username) {
+        HashMap<String, Timestamp> timestampCardIdMap = new HashMap<>();
+        String s = "SELECT * FROM UserAnswer WHERE user_name = '"+username+"'";
+        try {
+            Statement database = con.createStatement();
+            ResultSet rs = database.executeQuery(s);
+            while (rs.next()){
+                String cardId = rs.getString("flashcard_id");
+                Timestamp timestamp = rs.getTimestamp("NextShowTime");
+                timestampCardIdMap.put(cardId, timestamp);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return timestampCardIdMap;
     }
 }

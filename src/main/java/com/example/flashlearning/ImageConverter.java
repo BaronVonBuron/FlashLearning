@@ -10,13 +10,12 @@ import java.io.IOException;
 public class ImageConverter {
 
     public static Image byteArrayToFXImage(byte[] byteArray) throws IOException {
-        // Convert byte array to BufferedImage
+
         BufferedImage bufferedImage;
         try (ByteArrayInputStream inputStream = new ByteArrayInputStream(byteArray)) {
             bufferedImage = ImageIO.read(inputStream);
         }
 
-        // Convert BufferedImage to javafx.scene.image.Image
         return SwingFXUtils.toFXImage(bufferedImage, null);
     }
 }

@@ -4,20 +4,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="LearningPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flashlearning.FlashLearningController">
    <children>
-      <ImageView fx:id="MainImageView" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="MainImageView" fitHeight="607.0" fitWidth="800.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor></ImageView>
-      <Button fx:id="ShowAnswerButton" layoutX="531.0" layoutY="754.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showAnswerButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Vis Svar" />
-      <Button fx:id="MediumButton" layoutX="473.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mediumButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Mellem" />
+      <Button fx:id="ShowAnswerButton" layoutX="521.0" layoutY="756.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showAnswerButtonPressed" prefHeight="26.0" prefWidth="78.0" text="Vis Svar" />
+      <Button fx:id="MediumButton" layoutX="473.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mediumButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Næsten" />
       <Button fx:id="HardButton" layoutX="589.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#hardButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Svær" />
       <Button fx:id="WrongButton" layoutX="705.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#wrongButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Forkert" />
-      <Button fx:id="EasyButton" layoutX="357.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#easyButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Let" />
+      <Button fx:id="CorrectButton" layoutX="357.0" layoutY="821.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#correctButtonPressed" prefHeight="26.0" prefWidth="58.0" text="Korrekt" />
       <Button fx:id="IrrelevantButton" layoutX="884.0" layoutY="822.0" mnemonicParsing="false" onAction="#irrelevantButtonPressed" text="Irrelevant" />
-      <TextArea fx:id="ImageTextArea" editable="false" layoutX="150.0" layoutY="672.0" prefHeight="75.0" prefWidth="800.0" />
       <MenuBar fx:id="MenuBar" layoutX="14.0" layoutY="14.0">
         <menus>
           <Menu mnemonicParsing="false" text="Menu">
@@ -38,5 +38,25 @@
             </Menu>
         </menus>
       </MenuBar>
+      <TextField fx:id="QuestionTextField" editable="false" layoutX="450.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="200.0">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextArea fx:id="ImageTextArea" editable="false" layoutX="250.0" layoutY="670.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="600.0" wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </TextArea>
+      <ProgressBar fx:id="TrainingProgressBar" layoutX="460.0" layoutY="792.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="200.0" progress="0.0" />
+      <TableView fx:id="StatisticsTableView" layoutX="25.0" layoutY="670.0" prefHeight="199.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
    </children>
 </AnchorPane>

@@ -1,42 +1,46 @@
 package com.example.flashlearning;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
+import javafx.geometry.Pos;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
+
 import java.io.IOException;
-import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class FlashLearningController {
 
     private final Logic logic = new Logic();
-    private boolean flashcardIsShowing;
+    public TextField QuestionTextField;
+    public MenuItem MenuSelectDeck;
+    public MenuItem SelectUserMenu;
+    public MenuItem EditUserMenu;
+    public ProgressBar TrainingProgressBar; //TODO make it show how far along the training in that deck is.
+    public TableView StatisticsTableView;
+    private boolean trainingStarted, isAnswerShowing;
     private Deck selectedDeck;
     public ImageView MainImageView;
     private Image bgImage;
     public AnchorPane LearningPane;
-    public Button ShowAnswerButton, IrrelevantButton, EasyButton, WrongButton, HardButton, MediumButton;
+    public Button ShowAnswerButton, IrrelevantButton, CorrectButton, WrongButton, HardButton, MediumButton;
     public TextArea ImageTextArea;
     public MenuBar MenuBar;
     public MenuItem menuFileImportOption;
+    private User selectedUser;
 
 
 
     public void initialize() throws IOException {
         backgroundStartup();
-        imageViewShowImage();
+        selectUserSelected();
+        selectDeckOptionSelected();
+        trainingStarted = false;
+        isAnswerShowing = false;
+        ShowAnswerButton.setText("Start");
+        QuestionTextField.setEditable(false);
+        QuestionTextField.setAlignment(Pos.CENTER);
+        //ImageTextArea.setAlignment(Pos.CENTER);
     }
 
     private void backgroundStartup() {
@@ -45,24 +49,18 @@ public class FlashLearningController {
         this.LearningPane.setBackground(new Background(bg));
     }
 
-    private void imageViewShowImage() throws IOException {
-        if (flashcardIsShowing && selectedDeck != null) {
-            Image img = ImageConverter.byteArrayToFXImage(selectedDeck.getFlashcards().getFirst().getImageData());
-            if (img != null) {
-                MainImageView.setImage(img);
-                MainImageView.setFitWidth(800);
-                MainImageView.setFitHeight(607);
-                MainImageView.setPreserveRatio(true);
-
-                //Nedenstående centrerer billedet på x aksen.
-                double wc = img.getWidth() / MainImageView.getFitWidth();
-                double hc = img.getHeight() / MainImageView.getFitHeight();
-                if (wc >= hc) {
-                    MainImageView.setX((LearningPane.getPrefWidth() / 2) - (MainImageView.getFitWidth()) / 2);
-                } else {
-                    MainImageView.setX((LearningPane.getPrefWidth() / 2) - (img.getWidth() * (hc + 1)) / 2);
-                }
-                MainImageView.setY(45);
+    private void imageViewShowImage(byte[] imageData) throws IOException {
+        Image img = ImageConverter.byteArrayToFXImage(imageData);
+        if (img != null) {
+            MainImageView.setImage(img);
+            MainImageView.setPreserveRatio(true);//Så det ikke skaleres dumt.
+            //Nedenstående centrerer billedet på x aksen.
+            double wc = MainImageView.getFitWidth() / img.getWidth();//Breddekoefficient
+            double hc = MainImageView.getFitHeight() / img.getHeight();//Højdekoefficient.
+            if (wc <= hc) {
+                MainImageView.setX((LearningPane.getPrefWidth() / 2) - (MainImageView.getFitWidth()) / 2);
+            } else {
+                MainImageView.setX((LearningPane.getPrefWidth() / 2) - (img.getWidth() * hc) / 2);
             }
         }
     }
@@ -70,32 +68,61 @@ public class FlashLearningController {
 
 
 
-    public void showAnswerButtonPressed(ActionEvent actionEvent) {
-        //TODO get the text from the card.
+    public void showAnswerButtonPressed() throws IOException {
+        if (!trainingStarted){
+            imageViewShowImage(selectedUser.getNextCard().getImageData());
+            QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
+            ShowAnswerButton.setText("Vis Svar");
+            trainingStarted = true;
+        } else if (trainingStarted) {
+            ImageTextArea.setText(selectedUser.getNextCard().getAnswer()+"\n"+selectedUser.getNextCard().getBonusinfo());
+            isAnswerShowing = true;
+        }
     }
 
-    public void mediumButtonPressed(ActionEvent actionEvent) {
-        //TODO give the card a difficulty score of 2
+    public void nextImage() throws IOException {
+        if (isAnswerShowing) {//Kan kun gå til næste billede når svaret er vist.
+            selectedUser.setNextCard();
+            ImageTextArea.clear();
+            imageViewShowImage(selectedUser.getNextCard().getImageData());
+            QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
+            isAnswerShowing = false;
+        }
     }
 
-    public void hardButtonPressed(ActionEvent actionEvent) {
-        //TODO give the card a difficulty score of 3
-
+    public void mediumButtonPressed(ActionEvent actionEvent) throws IOException {//næsten
+        if (isAnswerShowing) {
+            logic.userAnswer(2, this.selectedUser, this.selectedUser.getNextCard());
+            nextImage();
+        }
     }
 
-    public void wrongButtonPressed(ActionEvent actionEvent) {
-        //TODO give the card a difficulty score of 4
-
+    public void hardButtonPressed(ActionEvent actionEvent) throws IOException {//svær
+        if (isAnswerShowing) {
+            logic.userAnswer(3, this.selectedUser, this.selectedUser.getNextCard());
+            nextImage();
+        }
     }
 
-    public void easyButtonPressed(ActionEvent actionEvent) {
-        //TODO give the card a difficulty score of 1
-
+    public void wrongButtonPressed(ActionEvent actionEvent) throws IOException {//forkert
+        if (isAnswerShowing) {
+            logic.userAnswer(4, this.selectedUser, this.selectedUser.getNextCard());
+            nextImage();
+        }
     }
 
-    public void irrelevantButtonPressed(ActionEvent actionEvent) {
-        //TODO make the card irrelevant for the user
+    public void correctButtonPressed(ActionEvent actionEvent) throws IOException {//korrekt
+        if (isAnswerShowing) {
+            logic.userAnswer(1, this.selectedUser, this.selectedUser.getNextCard());
+            nextImage();
+        }
+    }
 
+    public void irrelevantButtonPressed(ActionEvent actionEvent) throws IOException {
+        if (isAnswerShowing) {
+            logic.userAnswer(5, this.selectedUser, this.selectedUser.getNextCard());
+            nextImage();
+        }
     }
 
 
@@ -109,20 +136,15 @@ public class FlashLearningController {
 
 
 
-
-
-
-    public void selectDeckOptionSelected(ActionEvent actionEvent) throws IOException {
+    public void selectDeckOptionSelected() throws IOException {
         logic.selectDeck();
         this.selectedDeck = logic.getSelectedDeck();
-        if (!flashcardIsShowing){
-            flashcardIsShowing = true;
-        }
-        imageViewShowImage();
+        this.selectedUser.setDeck(this.selectedDeck);
     }
 
-    public void selectUserSelected(ActionEvent actionEvent) {
+    public void selectUserSelected() {
         logic.selectUser();
+        this.selectedUser = logic.getSelectedUser();
     }
 
     public void editUserSelected(ActionEvent actionEvent) {

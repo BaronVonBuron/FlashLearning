@@ -38,7 +38,7 @@ public class DataCleaner {
                 }
                 if (!row.startsWith("#")) { // Skip comment lines
                     // Splitting each line into columns
-                    String[] columns = row.split("\t");
+                    String[] columns = row.split("\t"); //TODO make it clean up the fucking html tags in the stupid file. fuck.
 
                     if (columns.length > 3) {
                         Matcher matcher = imgSrcPattern.matcher(columns[3]);
