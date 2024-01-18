@@ -1,12 +1,12 @@
 package com.example.flashlearning;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -14,11 +14,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Logic {
 
@@ -109,7 +107,7 @@ public class Logic {
         update();
     }
 
-    public void selectUser() {
+    /*public void selectUser() {
         //TODO if users is empty, go to create new user.
         Stage window = new Stage();
         window.setTitle("Select User");
@@ -136,14 +134,36 @@ public class Logic {
         window.setScene(scene);
         window.setResizable(false);
         window.showAndWait();
+    }*/
+
+    public void selectUser() {
+        UserMenuController userMenuController = new UserMenuController(this);
+        Stage newStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("user-menu.fxml"));
+        fxmlLoader.setController(userMenuController);
+        try {
+            Pane root = fxmlLoader.load();
+            Scene newScene = new Scene(root);
+            newStage.setScene(newScene);
+            newStage.setTitle("Bruger Menu");
+            newStage.setResizable(false);
+            newStage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void editUser() {
-        //TODO lav vindue til redigering af brugere/sletning af brugere.
+    public void editUser(User user, String text) {
+        dao.updateSomething("UPDATE [User] SET Name = '"+text+"' WHERE Name = ('"+user.getUserName()+"');");
     }
 
-    public void createUser(){
-        //TODO set up create user window.
+    public void createUser(String text){
+        dao.updateSomething("INSERT INTO [User] (Name) VALUES ('"+text+"');");
+    }
+
+    public void deleteUser(User user){
+        dao.updateSomething("DELETE FROM UserAnswer WHERE user_name = ('"+user.getUserName()+"')");
+        dao.updateSomething("DELETE FROM [User] WHERE Name = ('"+user.getUserName()+"')");
     }
 
     public void userAnswer(int a, User selectedUser, Flashcard nextCard){
@@ -196,5 +216,8 @@ public class Logic {
         this.selectedUser.setTimestamps(timestampsAndIds);
     }
 
-
+    public List<User> getUsers() {
+        update();
+        return users;
+    }
 }
