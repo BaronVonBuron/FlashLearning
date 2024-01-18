@@ -3,12 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="UserMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flashlearning.UserMenuController">
+<AnchorPane fx:id="UserMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ListView fx:id="UserListView" layoutX="31.0" layoutY="23.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="SelectSelectedUserButton" layoutX="281.0" layoutY="50.0" mnemonicParsing="false" onAction="#SelectSelectedUserButtonPressed" text="Vælg" />
-      <Button fx:id="DeleteSelectedUserButton" layoutX="281.0" layoutY="98.0" mnemonicParsing="false" onAction="#DeleteSelectedUserButtonPressed" text="Slet" />
+      <Button fx:id="SelectSelectedUserButton" layoutX="281.0" layoutY="50.0" mnemonicParsing="false" onAction="#SelectSelectedUserButtonPressed" prefHeight="25.0" prefWidth="57.0" text="Vælg" />
+      <Button fx:id="DeleteSelectedUserButton" layoutX="281.0" layoutY="98.0" mnemonicParsing="false" onAction="#DeleteSelectedUserButtonPressed" prefHeight="25.0" prefWidth="57.0" text="Slet" />
       <TextField fx:id="UserNameInputField" layoutX="31.0" layoutY="262.0" prefHeight="25.0" prefWidth="200.0" />
-      <Button fx:id="NewUserButton" layoutX="281.0" layoutY="262.0" mnemonicParsing="false" onAction="#NewUserButtonPressed" text="Opret" />
+      <Button fx:id="NewUserButton" layoutX="281.0" layoutY="262.0" mnemonicParsing="false" onAction="#NewUserButtonPressed" prefHeight="25.0" prefWidth="57.0" text="Opret" />
+      <Button fx:id="EditSelectedUserButton" layoutX="281.0" layoutY="140.0" mnemonicParsing="false" onAction="#EditSelectedUserButtonPressed" text="Redigér" />
    </children>
 </AnchorPane>

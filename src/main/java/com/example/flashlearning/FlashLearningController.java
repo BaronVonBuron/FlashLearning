@@ -148,6 +148,6 @@ public class FlashLearningController {
     }
 
     public void editUserSelected(ActionEvent actionEvent) {
-        logic.editUser();
+        logic.selectUser();
     }
 }
