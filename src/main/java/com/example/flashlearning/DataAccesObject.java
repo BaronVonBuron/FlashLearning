@@ -44,7 +44,7 @@ public class DataAccesObject {
     public void addCard(Flashcard flashcard) {
         // SQL statement with placeholders for values
         String sql = "INSERT INTO Flashcard (ID, Deck, Question, Answer, BonusInfo, ImageData) VALUES (?, ?, ?, ?, ?, ?);";
-        try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+        try (PreparedStatement pstmt = con.prepareStatement(sql)) {//TODO change name, fix comments.
             // Set parameters
             pstmt.setString(1, flashcard.getID());
             pstmt.setString(2, flashcard.getDeck());

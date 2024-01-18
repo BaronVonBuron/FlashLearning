@@ -19,6 +19,21 @@ public class AddEditFlashcardMenuController {
     public Button CancelButton;
     public TextField DecknameTextField;
     public TextField ImageNameTextField;
+    private Logic logic;
+
+    public AddEditFlashcardMenuController(Logic logic) {
+        this.logic = logic;
+    }
+
+    public AddEditFlashcardMenuController(Logic logic, Flashcard flashcard) {
+        this.logic = logic;
+    }
+
+
+    public void initialize(){
+        //TODO if flashcard edit - get card data into things.
+        //TODO if new card, just make new card and send to logic.
+    }
 
     public void ChooseImageFileButtonPressed(ActionEvent actionEvent) {
 

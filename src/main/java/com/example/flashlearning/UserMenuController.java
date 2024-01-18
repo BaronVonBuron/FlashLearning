@@ -14,6 +14,12 @@ public class UserMenuController {
     public TextField UserNameInputField;
     public Button NewUserButton;
 
+    private Logic logic;
+
+    public UserMenuController(Logic logic) {
+        this.logic = logic;
+    }
+
     public void initialize(){
         //TODO get users loaded into list
         //TODO make fields and return values to logic, to CRUD user.
