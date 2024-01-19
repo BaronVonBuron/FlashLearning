@@ -1,13 +1,17 @@
 package com.example.flashlearning;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class FlashLearningController {
 
@@ -16,8 +20,13 @@ public class FlashLearningController {
     public MenuItem MenuSelectDeck;
     public MenuItem SelectUserMenu;
     public MenuItem EditUserMenu;
-    public ProgressBar TrainingProgressBar; //TODO make it show how far along the training in that deck is.
-    public TableView StatisticsTableView;
+    public ProgressBar TrainingProgressBar;
+    public TableView<StatData> StatisticsTableView;
+    public TableColumn<StatData, String> Column1;
+    public TableColumn<StatData, Integer> Column2;
+    public MenuItem ResetUserProgressSelected;
+    public Label UserNameLabel;
+    public MenuItem NewCardMenu;
     private boolean trainingStarted, isAnswerShowing;
     private Deck selectedDeck;
     public ImageView MainImageView;
@@ -28,6 +37,7 @@ public class FlashLearningController {
     public MenuBar MenuBar;
     public MenuItem menuFileImportOption;
     private User selectedUser;
+    private boolean lastImageIsShowing;
 
 
 
@@ -37,10 +47,13 @@ public class FlashLearningController {
         selectDeckOptionSelected();
         trainingStarted = false;
         isAnswerShowing = false;
+        lastImageIsShowing = false;
+        startImage();
         ShowAnswerButton.setText("Start");
         QuestionTextField.setEditable(false);
         QuestionTextField.setAlignment(Pos.CENTER);
-        //ImageTextArea.setAlignment(Pos.CENTER);
+        StatisticsTableView.setEditable(false);
+        ImageTextArea.setText("Velkommen til FlashLearning!");
     }
 
     private void backgroundStartup() {
@@ -66,28 +79,74 @@ public class FlashLearningController {
     }
 
 
-
-
     public void showAnswerButtonPressed() throws IOException {
-        if (!trainingStarted){
-            imageViewShowImage(selectedUser.getNextCard().getImageData());
-            QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
-            ShowAnswerButton.setText("Vis Svar");
-            trainingStarted = true;
-        } else if (trainingStarted) {
+        if (!trainingStarted && selectedUser != null){
+            if (selectedUser.getNextCard() != null && !lastImageIsShowing) {
+                imageViewShowImage(selectedUser.getNextCard().getImageData());
+                QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
+                ImageTextArea.clear();
+                ShowAnswerButton.setText("Vis Svar");
+                trainingStarted = true;
+                setProgressBar();
+            } else noImages();
+        } else if (trainingStarted && !selectedUser.isLastCard()) {
             ImageTextArea.setText(selectedUser.getNextCard().getAnswer()+"\n"+selectedUser.getNextCard().getBonusinfo());
             isAnswerShowing = true;
+        } else {
+            ImageTextArea.setText("Vælg venligst bruger og deck for at begynde");
+        }
+    }
+
+    public void setProgressBar(){
+        if (this.selectedUser != null && selectedUser.getUserQueue() != null) {
+            double startsize = selectedUser.getInitialQueuesize();
+            double currentsize = selectedUser.getUserQueue().size();
+            TrainingProgressBar.setProgress(1 - (currentsize / startsize));
+            fillStatisticTable();
         }
     }
 
     public void nextImage() throws IOException {
-        if (isAnswerShowing) {//Kan kun gå til næste billede når svaret er vist.
+        if (isAnswerShowing && !selectedUser.isLastCard()) {//Kan kun gå til næste billede når svaret er vist.
+            setProgressBar();
             selectedUser.setNextCard();
-            ImageTextArea.clear();
-            imageViewShowImage(selectedUser.getNextCard().getImageData());
-            QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
-            isAnswerShowing = false;
+            if (!selectedUser.isLastCard()) {
+                ImageTextArea.clear();
+                imageViewShowImage(selectedUser.getNextCard().getImageData());
+                QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
+                isAnswerShowing = false;
+            } else {
+                lastImage();
+            }
         }
+    }
+
+    public void lastImage(){
+        if (selectedUser.isLastCard()){
+            Image img = new Image(this.getClass().getResourceAsStream("/lastcardflashlearning.jpg"));
+            MainImageView.setImage(img);
+            MainImageView.setX(250);
+            ImageTextArea.setText("Træning Slut");
+            QuestionTextField.setText("Træning Slut");
+            isAnswerShowing = false;
+            ShowAnswerButton.setText("Start");
+            trainingStarted = false;
+            lastImageIsShowing = true;
+            TrainingProgressBar.setProgress(1.00);
+        }
+    }
+
+    public void noImages(){
+        Image img = new Image(this.getClass().getResourceAsStream("/noimagesflashlearning.jpg"));
+        MainImageView.setImage(img);
+        MainImageView.setX(250);
+        ImageTextArea.setText("Importér eller vælg et sæt for at kunne starte træningen");
+    }
+
+    public void startImage(){
+        Image img = new Image(this.getClass().getResourceAsStream("/readyflashlearning.jpg"));
+        MainImageView.setImage(img);
+        MainImageView.setX(250);
     }
 
     public void mediumButtonPressed(ActionEvent actionEvent) throws IOException {//næsten
@@ -137,17 +196,65 @@ public class FlashLearningController {
 
 
     public void selectDeckOptionSelected() throws IOException {
-        logic.selectDeck();
-        this.selectedDeck = logic.getSelectedDeck();
-        this.selectedUser.setDeck(this.selectedDeck);
+        if (!logic.getDecks().isEmpty()) {
+            logic.selectDeck();
+            startImage();
+            lastImageIsShowing = false;
+            ImageTextArea.clear();
+            setProgressBar();
+        } else {
+            try {
+                importOptionSelected();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public void selectUserSelected() {
         logic.selectUser();
         this.selectedUser = logic.getSelectedUser();
+        if (this.selectedUser != null){
+            UserNameLabel.setText(this.selectedUser.getUserName());
+        }
     }
 
     public void editUserSelected(ActionEvent actionEvent) {
         logic.selectUser();
+    }
+
+    public void fillStatisticTable(){
+        ObservableList<StatData> dataList = FXCollections.observableArrayList();
+        UserStatistic us = logic.getUserStatistic();
+
+        dataList.add(new StatData("Korrekt", us.getCorrect()));
+        dataList.add(new StatData("Næsten", us.getEasy()));
+        dataList.add(new StatData("Svær", us.getHard()));
+        dataList.add(new StatData("Forkert", us.getWrong()));
+        dataList.add(new StatData("Irrelevante", us.getIrrelevant()));
+        dataList.add(new StatData("Kort Tilbage", selectedUser.getUserQueue().size()));
+
+        StatisticsTableView.setItems(dataList);
+
+        Column1.setCellValueFactory(new PropertyValueFactory<>("c1"));
+        Column2.setCellValueFactory(new PropertyValueFactory<>("c2"));
+    }
+
+    public void resetUserProgressSelected(ActionEvent actionEvent) {
+        if (this.selectedUser != null){
+            Alert window = new Alert(Alert.AlertType.CONFIRMATION);
+            window.setTitle("Nulstil brugerdata");
+            window.setContentText("Er du sikker på at du vil slette dine gemte svar?");
+            Optional<ButtonType> result = window.showAndWait();
+            if (result.get() == ButtonType.OK){
+                logic.deleteUserAnswers(selectedUser.getUserName());
+                fillStatisticTable();
+                System.out.println("userdata deleted");
+            }
+        }
+    }
+
+    public void newCardMenuSelected(ActionEvent actionEvent) {
+        logic.newCard();
     }
 }

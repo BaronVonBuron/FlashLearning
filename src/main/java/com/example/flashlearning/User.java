@@ -7,7 +7,7 @@ public class User {
 
     private String userName;
     private Deck deck;
-    int currentIndex;
+    int currentIndex, initialQueuesize;
     private boolean isLastCard;
     private Flashcard nextCard;
 
@@ -31,7 +31,14 @@ public class User {
 
     private PriorityQueue<Flashcard> userQueue = new PriorityQueue<>(flashcardComparator);
     public void setQueue() {
-        userQueue.addAll(this.deck.getFlashcards());
+        if (!this.userQueue.isEmpty()){
+            this.userQueue.clear();
+        }
+        if (!this.deck.getFlashcards().isEmpty()) {
+            userQueue.addAll(this.deck.getFlashcards());
+            initialQueuesize = userQueue.size();
+            isLastCard = false;
+        }
     }
 
 
@@ -39,6 +46,14 @@ public class User {
         this.userName = userName;
         currentIndex = 0;
         isLastCard = false;
+    }
+
+    public int getInitialQueuesize() {
+        return initialQueuesize;
+    }
+
+    public PriorityQueue<Flashcard> getUserQueue() {
+        return userQueue;
     }
 
     public void setNextCard(){
@@ -49,7 +64,7 @@ public class User {
         }
     }
 
-    public Flashcard getNextCard(){//TODO make it end training if no more cards.
+    public Flashcard getNextCard(){
         if (nextCard != null){
             return nextCard;
         } else {
@@ -58,7 +73,6 @@ public class User {
         }
     }
 
-    //TODO make method to get current and running statistics, to place in the statisticstableview.
 
     public boolean isLastCard() {
         return isLastCard;
@@ -108,8 +122,6 @@ public class User {
     public void setTimestamps(HashMap<String, Timestamp> timestampsAndIds) {
         for (Flashcard flashcard : deck.getFlashcards()) {
             if (timestampsAndIds.containsKey(flashcard.getID())){
-                System.out.println(flashcard.getID());
-                System.out.println(timestampsAndIds.get(flashcard.getID()));
                 flashcard.setTimestamp(timestampsAndIds.get(flashcard.getID()));//Sætter timestampen hvis ID'et findes hashmappet.
             }
         }

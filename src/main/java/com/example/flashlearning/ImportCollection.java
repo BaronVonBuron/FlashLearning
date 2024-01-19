@@ -15,13 +15,9 @@ public class ImportCollection {
     DataCleaner datacleaner = new DataCleaner();
 
 
-
-
     public void srcFolderChooser() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setTitle("Select Folder");
-        //File initialDirectory = new File("src/main/java/resources/");//åbner resources mappen først.
-        //directoryChooser.setInitialDirectory(initialDirectory);//TODO giver fejl: java.lang.IllegalArgumentException: Folder parameter must be a valid folder
         File selectedDir = directoryChooser.showDialog(null);//directory chooser åbner en hel mappe.
 
         if (selectedDir != null) {
@@ -42,6 +38,9 @@ public class ImportCollection {
                                 String question = deckAndQuestion[1]+"?";
                                 deck = deckAndQuestion[0];
                                 String answer = columns[4];
+                                answer = answer.replace("<div>", "");
+                                answer = answer.replace("</div>", "");
+                                answer = answer.replace("&nbsp;", "");
                                 String bonusInfo = "";
                                 for (int i = 5; i < columns.length; i++) {
                                     bonusInfo = bonusInfo.concat("\t");

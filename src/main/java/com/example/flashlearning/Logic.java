@@ -10,13 +10,12 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 public class Logic {
 
@@ -25,10 +24,16 @@ public class Logic {
     private Deck selectedDeck;
     private List<User> users;
     private User selectedUser;
+    UserStatistic userStatistic;
 
     public Logic() {
         this.dao = new DataAccesObject();
+        userStatistic = new UserStatistic(this);
         update();
+    }
+
+    public ArrayList<Deck> getDecks() {
+        return decks;
     }
 
     private void update() {
@@ -40,22 +45,13 @@ public class Logic {
     }
 
 
-
-    private byte[] readImageAsByteArray(String filepath) {
-        try {
-            return Files.readAllBytes(new File(filepath).toPath());
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     public User getSelectedUser() {
         return selectedUser;
     }
 
     public void setSelectedUser(User selectedUser) {
         this.selectedUser = selectedUser;
+        this.userStatistic.setUser(selectedUser);
     }
 
     public void selectDeck() {
@@ -66,13 +62,16 @@ public class Logic {
 
         Button okButton = new Button("OK");
         okButton.setOnAction(e -> {
-            this.selectedDeck = deckListView.getSelectionModel().getSelectedItem();
-            System.out.println("Selected Deck: " + selectedDeck);
-            selectedUser.setDeck(selectedDeck);
-            irrelevantCardIds();
-            timestampForUser();
-            setUserQueue();
-            window.close();
+            if (deckListView.getSelectionModel().getSelectedItem() != null) {
+                this.selectedDeck = deckListView.getSelectionModel().getSelectedItem();
+                System.out.println("Selected Deck: " + selectedDeck);
+                selectedUser.setDeck(selectedDeck);
+                irrelevantCardIds();
+                timestampForUser();
+                setUserQueue();
+                setUserStatistics();
+                window.close();
+            }
         });
 
         Button cancelButton = new Button("Cancel");
@@ -103,38 +102,12 @@ public class Logic {
     public void importCollection() {
         ImportCollection ic = new ImportCollection();
         ic.srcFolderChooser();
-        dao.addDeck(ic.getDeck());
+        if (ic.getDeck() != null) {
+            dao.addDeck(ic.getDeck());
+        }
         update();
     }
 
-    /*public void selectUser() {
-        //TODO if users is empty, go to create new user.
-        Stage window = new Stage();
-        window.setTitle("Select User");
-        ListView<User> userListView = new ListView<>();
-        userListView.getItems().addAll(users);
-
-        Button okButton = new Button("OK");
-        okButton.setOnAction(e -> {
-            this.selectedUser = userListView.getSelectionModel().getSelectedItem();
-            System.out.println("Selected User: " + selectedUser);
-            window.close();
-        });
-
-        Button cancelButton = new Button("Cancel");
-        cancelButton.setOnAction(e -> window.close());
-
-        HBox buttonBox = new HBox(15, okButton, cancelButton);
-        buttonBox.setAlignment(Pos.CENTER);
-
-        VBox layout = new VBox(10, userListView, buttonBox);
-        layout.setAlignment(Pos.CENTER);
-
-        Scene scene = new Scene(layout, 400, 350);
-        window.setScene(scene);
-        window.setResizable(false);
-        window.showAndWait();
-    }*/
 
     public void selectUser() {
         UserMenuController userMenuController = new UserMenuController(this);
@@ -172,43 +145,42 @@ public class Logic {
         String checkrow = "SELECT * FROM UserAnswer WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
         switch (a){
             case 1:
-                update = "UPDATE UserAnswer SET NextShowTime = DATEADD(day, 4, GETDATE()) WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
-                insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', DATEADD(day, 4, GETDATE()), 0)";
+                update = "UPDATE UserAnswer SET NextShowTime = DATEADD(day, 4, GETDATE()), Statistic = 1 WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
+                insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant, Statistic) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', DATEADD(day, 4, GETDATE()), 0, 1)";
                 dao.updateUserAnswer(update, insert, checkrow);
                 System.out.println("correct");
                 break;
             case 2:
-                update = "UPDATE UserAnswer SET NextShowTime = DATEADD(MINUTE, 720, GETDATE()) WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
-                insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', DATEADD(MINUTE, 720, GETDATE()), 0)";
+                update = "UPDATE UserAnswer SET NextShowTime = DATEADD(MINUTE, 720, GETDATE()), Statistic = 2 WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
+                insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant, Statistic) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', DATEADD(MINUTE, 720, GETDATE()), 0, 2)";
                 dao.updateUserAnswer(update, insert, checkrow);
                 System.out.println("medium");
                 break;
             case 3:
-                update = "UPDATE UserAnswer SET NextShowTime = DATEADD(MINUTE, 30, GETDATE()) WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
-                insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', DATEADD(MINUTE, 30, GETDATE()), 0)";
+                update = "UPDATE UserAnswer SET NextShowTime = DATEADD(MINUTE, 30, GETDATE()), Statistic = 3 WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
+                insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant, Statistic) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', DATEADD(MINUTE, 30, GETDATE()), 0, 3)";
                 dao.updateUserAnswer(update, insert, checkrow);
                 System.out.println("hard");
                 break;
             case 4:
-                update = "UPDATE UserAnswer SET NextShowTime = DATEADD(MINUTE, 10, GETDATE()) WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
-                insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', DATEADD(MINUTE, 10, GETDATE()), 0)";
+                update = "UPDATE UserAnswer SET NextShowTime = DATEADD(MINUTE, 10, GETDATE()), Statistic = 4 WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
+                insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant, Statistic) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', DATEADD(MINUTE, 10, GETDATE()), 0, 4)";
                 dao.updateUserAnswer(update, insert, checkrow);
                 System.out.println("wrong");
                 break;
             case 5:
-                update = "UPDATE UserAnswer SET NextShowTime = GETDATE(), Irrelevant = 1 WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
-                insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', GETDATE(), 1)";
+                update = "UPDATE UserAnswer SET NextShowTime = GETDATE(), Irrelevant = 1, Statistic = 5 WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
+                insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant, Statistic) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', GETDATE(), 1, 5)";
                 dao.updateUserAnswer(update, insert, checkrow);
-                //irrelevantCardIds();
                 System.out.println("irrelevant");
                 break;
         }
+        setUserStatistics();
     }
 
     public void irrelevantCardIds(){
         List<String> irrelevantCardIds = dao.returnIrrelevantCards(this.selectedUser.getUserName());
         this.selectedUser.removeIrrelevantCards(irrelevantCardIds);
-
     }
 
     public void timestampForUser(){
@@ -219,5 +191,55 @@ public class Logic {
     public List<User> getUsers() {
         update();
         return users;
+    }
+
+    public void setUserStatistics(){
+        if (this.selectedUser != null && this.userStatistic != null) {
+            dao.getUserStatistics(this.selectedUser, this.userStatistic);
+        }
+    }
+
+    public UserStatistic getUserStatistic() {
+        return userStatistic;
+    }
+
+    public void deleteUserAnswers(String userName) {
+        dao.deleteUserAnswers(userName);
+        setUserStatistics();
+    }
+
+    public void newCard() {
+        AddEditFlashcardMenuController addEditFlashcardMenuController = new AddEditFlashcardMenuController(this);
+        Stage newStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("add-edit-flashcard-menu.fxml"));
+        fxmlLoader.setController(addEditFlashcardMenuController);
+        try {
+            Pane root = fxmlLoader.load();
+            Scene newScene = new Scene(root);
+            newStage.setScene(newScene);
+            newStage.setTitle("Bruger Menu");
+            newStage.setResizable(false);
+            newStage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void addFlashcard(Flashcard flashcard) {
+        boolean deckexists = false;
+        for (Deck deck : this.decks) {
+            if (Objects.equals(deck.getName(), flashcard.getDeck())){
+                deckexists = true;
+            }
+        }
+        if (deckexists){
+            dao.addCard(flashcard);
+        } else {
+            Deck d = new Deck(flashcard.getDeck());
+            d.getFlashcards().add(flashcard);
+            dao.addDeck(d);
+        }
+
+        update();
     }
 }
