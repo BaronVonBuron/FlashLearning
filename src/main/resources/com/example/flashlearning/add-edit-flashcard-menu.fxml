@@ -6,7 +6,7 @@
 
 <AnchorPane fx:id="AddEditFlashcardWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.flashlearning.AddEditFlashcardMenuController">
    <children>
-      <ImageView fx:id="AddEditImageView" fitHeight="186.0" fitWidth="236.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="AddEditImageView" fitHeight="186.0" fitWidth="207.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="ChooseImageButton" layoutX="274.0" layoutY="41.0" mnemonicParsing="false" onAction="#ChooseImageFileButtonPressed" text="Vælg Billede" />
       <TextField fx:id="QuestionTextField" layoutX="48.0" layoutY="220.0" promptText="Spørgsmål..." />
       <TextField fx:id="AnswerTextField" layoutX="48.0" layoutY="250.0" promptText="Svar..." />

@@ -3,6 +3,7 @@ package com.example.flashlearning;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -125,6 +126,7 @@ public class DataAccesObject {
         try (FileWriter writer = new FileWriter(logFileName, true)) {
             writer.write("Failed to add Flashcard: " + flashcard.getID() + "\n");
             writer.write("Error Message: " + errorMessage + "\n");
+            writer.write("At: " + LocalDateTime.now() + "\n");
             writer.write("-------------------------------------------------\n");
         } catch (IOException e) {
             System.err.println("Error writing to log file: " + e.getMessage());

@@ -8,6 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
 import java.io.IOException;
+import java.nio.file.Files;
 
 public class FlashLearningController {
 
@@ -40,7 +41,6 @@ public class FlashLearningController {
         ShowAnswerButton.setText("Start");
         QuestionTextField.setEditable(false);
         QuestionTextField.setAlignment(Pos.CENTER);
-        //ImageTextArea.setAlignment(Pos.CENTER);
     }
 
     private void backgroundStartup() {
@@ -66,28 +66,53 @@ public class FlashLearningController {
     }
 
 
-
-
     public void showAnswerButtonPressed() throws IOException {
-        if (!trainingStarted){
-            imageViewShowImage(selectedUser.getNextCard().getImageData());
-            QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
-            ShowAnswerButton.setText("Vis Svar");
-            trainingStarted = true;
-        } else if (trainingStarted) {
+        if (!trainingStarted && selectedUser != null){
+            if (selectedUser.getNextCard() != null) {
+                imageViewShowImage(selectedUser.getNextCard().getImageData());
+                QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
+                ShowAnswerButton.setText("Vis Svar");
+                trainingStarted = true;
+            } else noImages();
+        } else if (trainingStarted && !selectedUser.isLastCard()) {
             ImageTextArea.setText(selectedUser.getNextCard().getAnswer()+"\n"+selectedUser.getNextCard().getBonusinfo());
             isAnswerShowing = true;
+        } else {
+            ImageTextArea.setText("Vælg venligst bruger og deck for at begynde");
         }
     }
 
     public void nextImage() throws IOException {
-        if (isAnswerShowing) {//Kan kun gå til næste billede når svaret er vist.
+        if (isAnswerShowing && !selectedUser.isLastCard()) {//Kan kun gå til næste billede når svaret er vist.
             selectedUser.setNextCard();
-            ImageTextArea.clear();
-            imageViewShowImage(selectedUser.getNextCard().getImageData());
-            QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
-            isAnswerShowing = false;
+            if (!selectedUser.isLastCard()) {
+                ImageTextArea.clear();
+                imageViewShowImage(selectedUser.getNextCard().getImageData());
+                QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
+                isAnswerShowing = false;
+            } else {
+                lastImage();
+            }
         }
+    }
+
+    public void lastImage(){
+        if (selectedUser.isLastCard()){
+            Image img = new Image(this.getClass().getResourceAsStream("/lastcardflashlearning.jpg"));
+            MainImageView.setImage(img);
+            MainImageView.setX(250);
+            ImageTextArea.setText("Træning Slut");
+            isAnswerShowing = false;
+            ShowAnswerButton.setText("Start");
+            trainingStarted = false;
+        }
+    }
+
+    public void noImages(){
+        Image img = new Image(this.getClass().getResourceAsStream("/noimagesflashlearning.jpg"));
+        MainImageView.setImage(img);
+        MainImageView.setX(250);
+        ImageTextArea.setText("Importér eller vælg et sæt for at kunne starte træningen");
     }
 
     public void mediumButtonPressed(ActionEvent actionEvent) throws IOException {//næsten
@@ -137,9 +162,15 @@ public class FlashLearningController {
 
 
     public void selectDeckOptionSelected() throws IOException {
-        logic.selectDeck();
-        this.selectedDeck = logic.getSelectedDeck();
-        this.selectedUser.setDeck(this.selectedDeck);
+        if (!logic.getDecks().isEmpty()) {
+            logic.selectDeck();
+        } else {
+            try {
+                importOptionSelected();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public void selectUserSelected() {

@@ -31,7 +31,13 @@ public class User {
 
     private PriorityQueue<Flashcard> userQueue = new PriorityQueue<>(flashcardComparator);
     public void setQueue() {
-        userQueue.addAll(this.deck.getFlashcards());
+        if (!this.userQueue.isEmpty()){
+            this.userQueue.clear();
+        }
+        if (!this.deck.getFlashcards().isEmpty()) {
+            userQueue.addAll(this.deck.getFlashcards());
+            isLastCard = false;
+        }
     }
 
 
@@ -49,7 +55,7 @@ public class User {
         }
     }
 
-    public Flashcard getNextCard(){//TODO make it end training if no more cards.
+    public Flashcard getNextCard(){
         if (nextCard != null){
             return nextCard;
         } else {
@@ -58,7 +64,6 @@ public class User {
         }
     }
 
-    //TODO make method to get current and running statistics, to place in the statisticstableview.
 
     public boolean isLastCard() {
         return isLastCard;
@@ -108,8 +113,6 @@ public class User {
     public void setTimestamps(HashMap<String, Timestamp> timestampsAndIds) {
         for (Flashcard flashcard : deck.getFlashcards()) {
             if (timestampsAndIds.containsKey(flashcard.getID())){
-                System.out.println(flashcard.getID());
-                System.out.println(timestampsAndIds.get(flashcard.getID()));
                 flashcard.setTimestamp(timestampsAndIds.get(flashcard.getID()));//Sætter timestampen hvis ID'et findes hashmappet.
             }
         }
