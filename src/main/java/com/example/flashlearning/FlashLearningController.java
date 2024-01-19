@@ -1,8 +1,11 @@
 package com.example.flashlearning;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -18,7 +21,9 @@ public class FlashLearningController {
     public MenuItem SelectUserMenu;
     public MenuItem EditUserMenu;
     public ProgressBar TrainingProgressBar; //TODO make it show how far along the training in that deck is.
-    public TableView StatisticsTableView;
+    public TableView<StatData> StatisticsTableView;
+    public TableColumn<StatData, String> Column1;
+    public TableColumn<StatData, Integer> Column2;
     private boolean trainingStarted, isAnswerShowing;
     private Deck selectedDeck;
     public ImageView MainImageView;
@@ -44,6 +49,7 @@ public class FlashLearningController {
         ShowAnswerButton.setText("Start");
         QuestionTextField.setEditable(false);
         QuestionTextField.setAlignment(Pos.CENTER);
+        StatisticsTableView.setEditable(false);
     }
 
     private void backgroundStartup() {
@@ -76,6 +82,7 @@ public class FlashLearningController {
                 QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
                 ShowAnswerButton.setText("Vis Svar");
                 trainingStarted = true;
+                setProgressBar();
             } else noImages();
         } else if (trainingStarted && !selectedUser.isLastCard()) {
             ImageTextArea.setText(selectedUser.getNextCard().getAnswer()+"\n"+selectedUser.getNextCard().getBonusinfo());
@@ -85,8 +92,16 @@ public class FlashLearningController {
         }
     }
 
+    public void setProgressBar(){
+        double startsize = selectedUser.getInitialQueuesize();
+        double currentsize = selectedUser.getUserQueue().size();
+        TrainingProgressBar.setProgress(1 - (currentsize/startsize));
+        fillStatisticTable();
+    }
+
     public void nextImage() throws IOException {
         if (isAnswerShowing && !selectedUser.isLastCard()) {//Kan kun gå til næste billede når svaret er vist.
+            setProgressBar();
             selectedUser.setNextCard();
             if (!selectedUser.isLastCard()) {
                 ImageTextArea.clear();
@@ -105,10 +120,12 @@ public class FlashLearningController {
             MainImageView.setImage(img);
             MainImageView.setX(250);
             ImageTextArea.setText("Træning Slut");
+            QuestionTextField.setText("Træning Slut");
             isAnswerShowing = false;
             ShowAnswerButton.setText("Start");
             trainingStarted = false;
             lastImageIsShowing = true;
+            TrainingProgressBar.setProgress(1.00);
         }
     }
 
@@ -177,6 +194,7 @@ public class FlashLearningController {
             startImage();
             lastImageIsShowing = false;
             ImageTextArea.clear();
+            setProgressBar();
         } else {
             try {
                 importOptionSelected();
@@ -194,4 +212,22 @@ public class FlashLearningController {
     public void editUserSelected(ActionEvent actionEvent) {
         logic.selectUser();
     }
+
+    public void fillStatisticTable(){
+        ObservableList<StatData> dataList = FXCollections.observableArrayList();
+        UserStatistic us = logic.getUserStatistic();
+
+        dataList.add(new StatData("Korrekt", us.getCorrect()));
+        dataList.add(new StatData("Næsten", us.getEasy()));
+        dataList.add(new StatData("Svær", us.getHard()));
+        dataList.add(new StatData("Forkert", us.getWrong()));
+        dataList.add(new StatData("Irrelevante", us.getIrrelevant()));
+        dataList.add(new StatData("Kort Tilbage", selectedUser.getUserQueue().size()));
+
+        StatisticsTableView.setItems(dataList);
+
+        Column1.setCellValueFactory(new PropertyValueFactory<>("c1"));
+        Column2.setCellValueFactory(new PropertyValueFactory<>("c2"));
+    }
+
 }

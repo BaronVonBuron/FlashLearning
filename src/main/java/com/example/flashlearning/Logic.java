@@ -25,9 +25,11 @@ public class Logic {
     private Deck selectedDeck;
     private List<User> users;
     private User selectedUser;
+    UserStatistic userStatistic;
 
     public Logic() {
         this.dao = new DataAccesObject();
+        userStatistic = new UserStatistic(this);
         update();
     }
 
@@ -60,6 +62,7 @@ public class Logic {
 
     public void setSelectedUser(User selectedUser) {
         this.selectedUser = selectedUser;
+        this.userStatistic.setUser(selectedUser);
     }
 
     public void selectDeck() {
@@ -70,13 +73,17 @@ public class Logic {
 
         Button okButton = new Button("OK");
         okButton.setOnAction(e -> {
-            this.selectedDeck = deckListView.getSelectionModel().getSelectedItem();
-            System.out.println("Selected Deck: " + selectedDeck);
-            selectedUser.setDeck(selectedDeck);
-            irrelevantCardIds();
-            timestampForUser();
-            setUserQueue();
-            window.close();
+            if (deckListView.getSelectionModel().getSelectedItem() != null) {
+                this.selectedDeck = deckListView.getSelectionModel().getSelectedItem();
+                System.out.println("Selected Deck: " + selectedDeck);
+                selectedUser.setDeck(selectedDeck);
+                irrelevantCardIds();
+                timestampForUser();
+                setUserQueue();
+                //userStatistic.setDeck(selectedUser.getDeck());
+                setUserStatistics();
+                window.close();
+            }
         });
 
         Button cancelButton = new Button("Cancel");
@@ -181,12 +188,12 @@ public class Logic {
                 System.out.println("irrelevant");
                 break;
         }
+        setUserStatistics();
     }
 
     public void irrelevantCardIds(){
         List<String> irrelevantCardIds = dao.returnIrrelevantCards(this.selectedUser.getUserName());
         this.selectedUser.removeIrrelevantCards(irrelevantCardIds);
-
     }
 
     public void timestampForUser(){
@@ -197,5 +204,15 @@ public class Logic {
     public List<User> getUsers() {
         update();
         return users;
+    }
+
+    public void setUserStatistics(){
+        if (this.selectedUser != null && this.userStatistic != null) {
+            dao.getUserStatistics(this.selectedUser, this.userStatistic);
+        }
+    }
+
+    public UserStatistic getUserStatistic() {
+        return userStatistic;
     }
 }

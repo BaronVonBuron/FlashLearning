@@ -7,7 +7,7 @@ public class User {
 
     private String userName;
     private Deck deck;
-    int currentIndex;
+    int currentIndex, initialQueuesize;
     private boolean isLastCard;
     private Flashcard nextCard;
 
@@ -36,6 +36,7 @@ public class User {
         }
         if (!this.deck.getFlashcards().isEmpty()) {
             userQueue.addAll(this.deck.getFlashcards());
+            initialQueuesize = userQueue.size();
             isLastCard = false;
         }
     }
@@ -45,6 +46,14 @@ public class User {
         this.userName = userName;
         currentIndex = 0;
         isLastCard = false;
+    }
+
+    public int getInitialQueuesize() {
+        return initialQueuesize;
+    }
+
+    public PriorityQueue<Flashcard> getUserQueue() {
+        return userQueue;
     }
 
     public void setNextCard(){

@@ -188,4 +188,19 @@ public class DataAccesObject {
         }
         return timestampCardIdMap;
     }
+
+    public void getUserStatistics(User selectedUser, UserStatistic userStatistic) {
+        List<Integer> stats = new ArrayList<>();
+        String s = "SELECT Statistic FROM UserAnswer WHERE user_name = '"+selectedUser.getUserName()+"';";
+        try {
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(s);
+            while (rs.next()){
+                stats.add(rs.getInt("Statistic"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        userStatistic.setStats(stats);
+    }
 }
