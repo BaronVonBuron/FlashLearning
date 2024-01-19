@@ -17,6 +17,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 public class Logic {
 
@@ -184,7 +185,6 @@ public class Logic {
                 update = "UPDATE UserAnswer SET NextShowTime = GETDATE(), Irrelevant = 1, Statistic = 5 WHERE user_name = '" + selectedUser.getUserName() + "' AND flashcard_id = '" + nextCard.getID() + "'";
                 insert = "INSERT INTO UserAnswer (user_name, flashcard_id, NextShowTime, Irrelevant, Statistic) VALUES ('" + selectedUser.getUserName() + "', '" + nextCard.getID() + "', GETDATE(), 1, 5)";
                 dao.updateUserAnswer(update, insert, checkrow);
-                //irrelevantCardIds();
                 System.out.println("irrelevant");
                 break;
         }
@@ -214,5 +214,45 @@ public class Logic {
 
     public UserStatistic getUserStatistic() {
         return userStatistic;
+    }
+
+    public void deleteUserAnswers(String userName) {
+        dao.deleteUserAnswers(userName);
+        setUserStatistics();
+    }
+
+    public void newCard() {
+        AddEditFlashcardMenuController addEditFlashcardMenuController = new AddEditFlashcardMenuController(this);
+        Stage newStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("add-edit-flashcard-menu.fxml"));
+        fxmlLoader.setController(addEditFlashcardMenuController);
+        try {
+            Pane root = fxmlLoader.load();
+            Scene newScene = new Scene(root);
+            newStage.setScene(newScene);
+            newStage.setTitle("Bruger Menu");
+            newStage.setResizable(false);
+            newStage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void addFlashcard(Flashcard flashcard) {
+        boolean deckexists = false;
+        for (Deck deck : this.decks) {
+            if (Objects.equals(deck.getName(), flashcard.getDeck())){
+                deckexists = true;
+            }
+        }
+        if (deckexists){
+            dao.addCard(flashcard);
+        } else {
+            Deck d = new Deck(flashcard.getDeck());
+            d.getFlashcards().add(flashcard);
+            dao.addDeck(d);
+        }
+
+        update();
     }
 }

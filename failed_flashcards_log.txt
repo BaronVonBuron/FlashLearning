@@ -42,3 +42,35 @@ Failed to add Flashcard: H5E$7rSP=l
 Error Message: Cannot insert the value NULL into column 'ImageData', table 'Anders_FlashLearning.dbo.Flashcard'; column does not allow nulls. INSERT fails.
 At: 2024-01-19T03:44:58.688256300
 -------------------------------------------------
+Failed to add Flashcard: qY={H|AuYy
+Error Message: Cannot insert the value NULL into column 'ImageData', table 'Anders_FlashLearning.dbo.Flashcard'; column does not allow nulls. INSERT fails.
+At: 2024-01-19T19:03:45.303475900
+-------------------------------------------------
+Failed to add Flashcard: gO$_A4KqxB
+Error Message: Cannot insert the value NULL into column 'ImageData', table 'Anders_FlashLearning.dbo.Flashcard'; column does not allow nulls. INSERT fails.
+At: 2024-01-19T19:03:47.953137
+-------------------------------------------------
+Failed to add Flashcard: H5E$7rSP=l
+Error Message: Cannot insert the value NULL into column 'ImageData', table 'Anders_FlashLearning.dbo.Flashcard'; column does not allow nulls. INSERT fails.
+At: 2024-01-19T19:03:50.811341900
+-------------------------------------------------
+Failed to add Flashcard: oKSq?2@=_P
+Error Message: Cannot insert the value NULL into column 'ImageData', table 'Anders_FlashLearning.dbo.Flashcard'; column does not allow nulls. INSERT fails.
+At: 2024-01-19T19:03:56.851660200
+-------------------------------------------------
+Failed to add Flashcard: lvT=lo5})O
+Error Message: Cannot insert the value NULL into column 'ImageData', table 'Anders_FlashLearning.dbo.Flashcard'; column does not allow nulls. INSERT fails.
+At: 2024-01-19T19:03:57.260688100
+-------------------------------------------------
+Failed to add Flashcard: eA2PIw@vN4
+Error Message: Cannot insert the value NULL into column 'ImageData', table 'Anders_FlashLearning.dbo.Flashcard'; column does not allow nulls. INSERT fails.
+At: 2024-01-19T19:03:58.089495700
+-------------------------------------------------
+Failed to add Flashcard: oJ&~v9ODFh
+Error Message: Cannot insert the value NULL into column 'ImageData', table 'Anders_FlashLearning.dbo.Flashcard'; column does not allow nulls. INSERT fails.
+At: 2024-01-19T19:04:06.637389900
+-------------------------------------------------
+Failed to add Flashcard: l`)g4{qto6
+Error Message: Cannot insert the value NULL into column 'ImageData', table 'Anders_FlashLearning.dbo.Flashcard'; column does not allow nulls. INSERT fails.
+At: 2024-01-19T19:04:10.619755900
+-------------------------------------------------

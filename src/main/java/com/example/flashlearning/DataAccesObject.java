@@ -43,19 +43,17 @@ public class DataAccesObject {
 
 
     public void addCard(Flashcard flashcard) {
-        // SQL statement with placeholders for values
         String sql = "INSERT INTO Flashcard (ID, Deck, Question, Answer, BonusInfo, ImageData) VALUES (?, ?, ?, ?, ?, ?);";
-        try (PreparedStatement pstmt = con.prepareStatement(sql)) {//TODO change name, fix comments.
-            // Set parameters
-            pstmt.setString(1, flashcard.getID());
-            pstmt.setString(2, flashcard.getDeck());
-            pstmt.setString(3, flashcard.getQuestion());
-            pstmt.setString(4, flashcard.getAnswer());
-            pstmt.setString(5, flashcard.getBonusinfo());
-            pstmt.setBytes(6, flashcard.getImageData()); // Set image data as byte array
+        try (PreparedStatement preparedStatement = con.prepareStatement(sql)) {
 
-            // Execute update
-            pstmt.executeUpdate();
+            preparedStatement.setString(1, flashcard.getID());
+            preparedStatement.setString(2, flashcard.getDeck());
+            preparedStatement.setString(3, flashcard.getQuestion());
+            preparedStatement.setString(4, flashcard.getAnswer());
+            preparedStatement.setString(5, flashcard.getBonusinfo());
+            preparedStatement.setBytes(6, flashcard.getImageData());
+
+            preparedStatement.executeUpdate();
             System.out.println("Card added: " + flashcard.getID());
         } catch (SQLException e) {
             System.err.println("Error adding card: " + e.getMessage());
@@ -202,5 +200,10 @@ public class DataAccesObject {
             throw new RuntimeException(e);
         }
         userStatistic.setStats(stats);
+    }
+
+    public void deleteUserAnswers(String userName) {
+        String s = "DELETE FROM UserAnswer WHERE user_name = '"+userName+"'";
+        updateSomething(s);
     }
 }

@@ -23,6 +23,7 @@
           <Menu mnemonicParsing="false" text="Menu">
             <items>
               <MenuItem fx:id="menuFileImportOption" mnemonicParsing="false" onAction="#importOptionSelected" text="Import" />
+                  <MenuItem fx:id="NewCardMenu" mnemonicParsing="false" onAction="#newCardMenuSelected" text="New Card" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Deck">
@@ -34,6 +35,7 @@
               <items>
                 <MenuItem fx:id="SelectUserMenu" mnemonicParsing="false" onAction="#selectUserSelected" text="Select User" />
                   <MenuItem fx:id="EditUserMenu" mnemonicParsing="false" onAction="#editUserSelected" text="Edit User" />
+                  <MenuItem fx:id="ResetUserProgressSelected" mnemonicParsing="false" onAction="#resetUserProgressSelected" text="Reset Progress" />
               </items>
             </Menu>
         </menus>
@@ -58,5 +60,10 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Label fx:id="UserNameLabel" layoutX="179.0" layoutY="11.0" prefHeight="25.0" prefWidth="200.0" textAlignment="CENTER" textFill="#c605fc">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

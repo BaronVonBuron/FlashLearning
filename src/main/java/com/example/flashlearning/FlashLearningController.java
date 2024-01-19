@@ -12,6 +12,7 @@ import javafx.scene.layout.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Optional;
 
 public class FlashLearningController {
 
@@ -24,6 +25,9 @@ public class FlashLearningController {
     public TableView<StatData> StatisticsTableView;
     public TableColumn<StatData, String> Column1;
     public TableColumn<StatData, Integer> Column2;
+    public MenuItem ResetUserProgressSelected;
+    public Label UserNameLabel;
+    public MenuItem NewCardMenu;
     private boolean trainingStarted, isAnswerShowing;
     private Deck selectedDeck;
     public ImageView MainImageView;
@@ -50,6 +54,7 @@ public class FlashLearningController {
         QuestionTextField.setEditable(false);
         QuestionTextField.setAlignment(Pos.CENTER);
         StatisticsTableView.setEditable(false);
+        ImageTextArea.setText("Velkommen til FlashLearning!");
     }
 
     private void backgroundStartup() {
@@ -80,6 +85,7 @@ public class FlashLearningController {
             if (selectedUser.getNextCard() != null && !lastImageIsShowing) {
                 imageViewShowImage(selectedUser.getNextCard().getImageData());
                 QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
+                ImageTextArea.clear();
                 ShowAnswerButton.setText("Vis Svar");
                 trainingStarted = true;
                 setProgressBar();
@@ -207,6 +213,9 @@ public class FlashLearningController {
     public void selectUserSelected() {
         logic.selectUser();
         this.selectedUser = logic.getSelectedUser();
+        if (this.selectedUser != null){
+            UserNameLabel.setText(this.selectedUser.getUserName());
+        }
     }
 
     public void editUserSelected(ActionEvent actionEvent) {
@@ -230,4 +239,21 @@ public class FlashLearningController {
         Column2.setCellValueFactory(new PropertyValueFactory<>("c2"));
     }
 
+    public void resetUserProgressSelected(ActionEvent actionEvent) {
+        if (this.selectedUser != null){
+            Alert window = new Alert(Alert.AlertType.CONFIRMATION);
+            window.setTitle("Nulstil brugerdata");
+            window.setContentText("Er du sikker på at du vil slette dine gemte svar?");
+            Optional<ButtonType> result = window.showAndWait();
+            if (result.get() == ButtonType.OK){
+                logic.deleteUserAnswers(selectedUser.getUserName());
+                fillStatisticTable();
+                System.out.println("userdata deleted");
+            }
+        }
+    }
+
+    public void newCardMenuSelected(ActionEvent actionEvent) {
+        logic.newCard();
+    }
 }

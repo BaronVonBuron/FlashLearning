@@ -100,6 +100,8 @@ public class UserStatistic {
                         break;
                 }
             }
+        } else {
+            clearData();
         }
     }
 }

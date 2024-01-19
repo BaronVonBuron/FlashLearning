@@ -1,7 +1,6 @@
 package com.example.flashlearning;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -26,6 +25,7 @@ public class UserMenuController {
         UserListView = new ListView<>();
         this.logic = logic;
     }
+    
 
     public void initialize(){
         update();
