@@ -10,9 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,16 +45,6 @@ public class Logic {
     }
 
 
-
-    private byte[] readImageAsByteArray(String filepath) {
-        try {
-            return Files.readAllBytes(new File(filepath).toPath());
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     public User getSelectedUser() {
         return selectedUser;
     }
@@ -81,7 +69,6 @@ public class Logic {
                 irrelevantCardIds();
                 timestampForUser();
                 setUserQueue();
-                //userStatistic.setDeck(selectedUser.getDeck());
                 setUserStatistics();
                 window.close();
             }

@@ -11,7 +11,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.Optional;
 
 public class FlashLearningController {
@@ -21,7 +20,7 @@ public class FlashLearningController {
     public MenuItem MenuSelectDeck;
     public MenuItem SelectUserMenu;
     public MenuItem EditUserMenu;
-    public ProgressBar TrainingProgressBar; //TODO make it show how far along the training in that deck is.
+    public ProgressBar TrainingProgressBar;
     public TableView<StatData> StatisticsTableView;
     public TableColumn<StatData, String> Column1;
     public TableColumn<StatData, Integer> Column2;
@@ -99,10 +98,12 @@ public class FlashLearningController {
     }
 
     public void setProgressBar(){
-        double startsize = selectedUser.getInitialQueuesize();
-        double currentsize = selectedUser.getUserQueue().size();
-        TrainingProgressBar.setProgress(1 - (currentsize/startsize));
-        fillStatisticTable();
+        if (this.selectedUser != null && selectedUser.getUserQueue() != null) {
+            double startsize = selectedUser.getInitialQueuesize();
+            double currentsize = selectedUser.getUserQueue().size();
+            TrainingProgressBar.setProgress(1 - (currentsize / startsize));
+            fillStatisticTable();
+        }
     }
 
     public void nextImage() throws IOException {

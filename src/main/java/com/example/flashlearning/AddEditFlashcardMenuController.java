@@ -77,20 +77,20 @@ public class AddEditFlashcardMenuController {
     }
 
     public void SaveFlashcardButtonPressed(ActionEvent actionEvent) throws IOException {
-            String deckname = DecknameTextField.getText();
-            String question = QuestionTextField.getText();
-            String answer = AnswerTextField.getText();
-            String bonusinfo = BonusInfoTextArea.getText();
-            byte[] fileContent = Files.readAllBytes(file.toPath());
+        String deckname = DecknameTextField.getText();
+        String question = QuestionTextField.getText();
+        String answer = AnswerTextField.getText();
+        String bonusinfo = BonusInfoTextArea.getText();
+        byte[] fileContent = Files.readAllBytes(file.toPath());
 
-            if (bonusinfo.isEmpty()){
-                bonusinfo = " ";
-            }
+        if (bonusinfo.isEmpty()){
+            bonusinfo = " ";
+        }
 
-            if (!deckname.isEmpty() && !question.isEmpty() && !answer.isEmpty() && fileContent.length > 0) {
-                logic.addFlashcard(new Flashcard(UUID.randomUUID().toString(), deckname, question, answer, bonusinfo, fileContent));
-                closeWindow();
-            }
+        if (!deckname.isEmpty() && !question.isEmpty() && !answer.isEmpty() && fileContent.length > 0) {
+            logic.addFlashcard(new Flashcard(UUID.randomUUID().toString(), deckname, question, answer, bonusinfo, fileContent));
+            closeWindow();
+        }
     }
 
 

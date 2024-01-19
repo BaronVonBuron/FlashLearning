@@ -1,5 +1,5 @@
 package com.example.flashlearning;
-
+//Denne klasse er rent og skært til at smide data i statisti-tableview'et.
 public class StatData {
     private String c1;
     private int c2;
