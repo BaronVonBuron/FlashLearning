@@ -29,6 +29,7 @@ public class FlashLearningController {
     public MenuBar MenuBar;
     public MenuItem menuFileImportOption;
     private User selectedUser;
+    private boolean lastImageIsShowing;
 
 
 
@@ -38,6 +39,8 @@ public class FlashLearningController {
         selectDeckOptionSelected();
         trainingStarted = false;
         isAnswerShowing = false;
+        lastImageIsShowing = false;
+        startImage();
         ShowAnswerButton.setText("Start");
         QuestionTextField.setEditable(false);
         QuestionTextField.setAlignment(Pos.CENTER);
@@ -68,7 +71,7 @@ public class FlashLearningController {
 
     public void showAnswerButtonPressed() throws IOException {
         if (!trainingStarted && selectedUser != null){
-            if (selectedUser.getNextCard() != null) {
+            if (selectedUser.getNextCard() != null && !lastImageIsShowing) {
                 imageViewShowImage(selectedUser.getNextCard().getImageData());
                 QuestionTextField.setText(selectedUser.getNextCard().getQuestion());
                 ShowAnswerButton.setText("Vis Svar");
@@ -105,6 +108,7 @@ public class FlashLearningController {
             isAnswerShowing = false;
             ShowAnswerButton.setText("Start");
             trainingStarted = false;
+            lastImageIsShowing = true;
         }
     }
 
@@ -113,6 +117,12 @@ public class FlashLearningController {
         MainImageView.setImage(img);
         MainImageView.setX(250);
         ImageTextArea.setText("Importér eller vælg et sæt for at kunne starte træningen");
+    }
+
+    public void startImage(){
+        Image img = new Image(this.getClass().getResourceAsStream("/readyflashlearning.jpg"));
+        MainImageView.setImage(img);
+        MainImageView.setX(250);
     }
 
     public void mediumButtonPressed(ActionEvent actionEvent) throws IOException {//næsten
@@ -164,6 +174,9 @@ public class FlashLearningController {
     public void selectDeckOptionSelected() throws IOException {
         if (!logic.getDecks().isEmpty()) {
             logic.selectDeck();
+            startImage();
+            lastImageIsShowing = false;
+            ImageTextArea.clear();
         } else {
             try {
                 importOptionSelected();
