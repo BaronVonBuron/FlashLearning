@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="AddEditFlashcardWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="AddEditImageView" fitHeight="186.0" fitWidth="207.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="ChooseImageButton" layoutX="274.0" layoutY="41.0" mnemonicParsing="false" onAction="#ChooseImageFileButtonPressed" text="Vælg Billede" />
+      <TextField fx:id="QuestionTextField" layoutX="48.0" layoutY="220.0" promptText="Spørgsmål..." />
+      <TextField fx:id="AnswerTextField" layoutX="48.0" layoutY="250.0" promptText="Svar..." />
+      <Button fx:id="SaveButton" layoutX="212.0" layoutY="307.0" mnemonicParsing="false" onAction="#SaveFlashcardButtonPressed" prefHeight="25.0" prefWidth="82.0" text="Gem" />
+      <Button fx:id="CancelButton" layoutX="315.0" layoutY="307.0" mnemonicParsing="false" onAction="#CancelButtonPressed" prefHeight="25.0" prefWidth="82.0" text="Annuller" />
+      <TextField fx:id="DecknameTextField" layoutX="241.0" layoutY="220.0" promptText="Sætnavn..." />
+      <TextField fx:id="ImageNameTextField" editable="false" layoutX="241.0" layoutY="89.0" />
+      <TextArea fx:id="BonusInfoTextArea" layoutX="48.0" layoutY="280.0" prefHeight="78.0" prefWidth="149.0" promptText="Bonusinfo..." wrapText="true" />
+   </children>
+</AnchorPane>
